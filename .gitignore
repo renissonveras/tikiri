@@ -5,3 +5,4 @@
 /code/app/FaveoJob
 /code/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
 /code/storage/app/attachments
+/code/storage/app/geoip.mmdb
