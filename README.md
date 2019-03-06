@@ -34,18 +34,14 @@ Créditos
 
 Website
 --------------------------
-Visite nosso site para mais informações sobre nossos serviços <a href="https://tikiri.com.br" target="_blank">www.tikiri.com.br</a>
+Visite nosso site para mais informações <a href="https://tikiri.com.br" target="_blank">www.tikiri.com.br</a>
 
 Instalar
 --------------------------
 
-<p>O Tikiri, tem um sistema de auto-instala&ccedil;&atilde;o,siga os passos a seguir para efetuar a instala&ccedil;&atilde;o do sistema:</p>
+<p>Siga os passos a seguir para efetuar a instala&ccedil;&atilde;o do sistema:</p>
 
-<p>1. Acesse o site tikiri.com.br e fa&ccedil;a do download do c&oacute;digo fonte.</p>
-
-<ul>
-	<li>Acesse o link https://tikiri.com.br, localize o bot&atilde;o de download e siga o passos para fazer o download gratuito do sistema.</li>
-</ul>
+<p>1. Fa&ccedil;a do download do c&oacute;digo fonte.</p>
 
 <hr />
 <p>2. Verifique os requisitos m&iacute;nimos e fa&ccedil;a o upload do c&oacute;digo para o seu servidor web:</p>
@@ -53,7 +49,7 @@ Instalar
 <ul>
 	<li>Requisitos m&iacute;nimos:
 	<ul>
-		<li>PHP Vers&atilde;o: 5.6+</li>
+		<li>PHP Vers&atilde;o: 5.6</li>
 		<li>Banco de Dados: MySQL 5.0+</li>
 		<li>Servidor Web: Apache / IIS / Nginx</li>
 		<li>Extens&otilde;es PHP: Imap, Mbstring, Mcrypt, OpenSSL, PDO, Tokenizer, XML, Zip</li>
@@ -62,16 +58,12 @@ Instalar
 	</li>
 </ul>
 
-<blockquote>
-<p>Obs.: O script de instala&ccedil;&atilde;o verifica se todos os requisitos est&atilde;o presentes antes de iniciar.</p>
-</blockquote>
-
 <ul>
 	<li>Copie o c&oacute;digo de sistema para o &quot;Document Root&quot; do seu servidor web.</li>
 </ul>
 
 <blockquote>
-<p>O&nbsp;&quot;Document Root&quot; varia de acordo com o servidor web que voc&ecirc; est&aacute; utilizando (Apache, Nginx, IIS), ou mesmo da distribui&ccedil;&atilde;o linux que voc&ecirc; utiliza. Cada empresa de hospedagem de sites tamb&eacute;m varia a localiza&ccedil;&atilde;o da pasta raiz. Se voc&ecirc; tem d&uacute;vidas quanto a isso pe&ccedil;a ajuda a um especialista ou <a href="https://tikiri.com.br/loja/01-hora-de-suporte-tecnico/">solicite nosso suporte t&eacute;cnico</a>.</p>
+<p>O&nbsp;&quot;Document Root&quot; varia de acordo com o servidor web que voc&ecirc; est&aacute; utilizando (Apache, Nginx, IIS), ou mesmo da distribui&ccedil;&atilde;o linux que voc&ecirc; utiliza. Cada empresa de hospedagem de sites tamb&eacute;m varia a localiza&ccedil;&atilde;o da pasta raiz. Se voc&ecirc; tem d&uacute;vidas quanto a isso pe&ccedil;a ajuda a um especialista ou <a href="https://tikiri.com.br/contato/">solicite nosso suporte t&eacute;cnico</a>.</p>
 </blockquote>
 
 <p>&nbsp;</p>
@@ -82,9 +74,9 @@ Instalar
 <ul>
 	<li>O Tikiri est&aacute; dispon&iacute;vel para download em tar.gz ou .zip execute um dos comandos abaixo de acordo com a vers&atilde;o que voc&ecirc; optou para o download:
 	<ul>
-		<li>tar - xzvf . Ex. tar -xzvf&nbsp;tikiri-final-1.9.6.tar.gz</li>
+		<li>tar - xzvf . Ex. tar -xzvf&nbsp;tikiri-master.tar.gz</li>
 		<li>ou</li>
-		<li>unzip&nbsp;.&nbsp;Ex. unzip tikiri-final-1.9.6.tar.gz</li>
+		<li>unzip&nbsp;.&nbsp;Ex. unzip tikiri-master.zip</li>
 	</ul>
 	</li>
 </ul>
@@ -92,7 +84,7 @@ Instalar
 <hr />
 <p>4. Defina nas permiss&otilde;es de diret&oacute;rio:</p>
 
-<p>Os subdiretorios storage e bootstrap/cache precisam ter permis&atilde;o de escrita pelo seu servidor web. Exemplo de comando para conceder permiss&atilde;o de escrita em servidores Apache:</p>
+<p>Os subdiretorios code/storage e code/bootstrap/cache precisam ter permis&atilde;o de escrita pelo seu servidor web. Exemplo de comando para conceder permiss&atilde;o de escrita em servidores Apache:</p>
 
 <ul>
 	<li>chgrp -R www-data storage bootstrap/cache</li>
@@ -115,9 +107,6 @@ Instalar
 		</ul>
 	</li>  
 </ul>
-
-
-
 
 <p>Pronto, instala&ccedil;&atilde;o efetuada.</p>
 
