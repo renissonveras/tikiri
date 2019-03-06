@@ -1,0 +1,12 @@
+.tabs-horizontal > .active, .tabs-stacked > .active, .skin-yellow .main-header .navbar .sidebar-toggle:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+.skin-yellow .main-header .navbar, .skin-yellow .main-header .logo {
+	background: linear-gradient(60deg, #ffa726, #fb8c00);
+	box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
+}
+
+.navbar-nav li.active:before {
+    border-bottom-color: white;
+}

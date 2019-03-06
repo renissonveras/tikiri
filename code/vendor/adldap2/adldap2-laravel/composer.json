@@ -1,0 +1,40 @@
+{
+    "name": "adldap2/adldap2-laravel",
+    "description": "LDAP Authentication & Management for Laravel.",
+    "keywords": ["adldap", "adldap2", "ldap", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6",
+        "adldap2/adldap2": "7.0.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.6",
+        "orchestra/testbench": "~3.2"
+    },
+    "archive": {
+        "exclude": ["/tests"]
+    },
+    "autoload": {
+        "psr-4": {
+            "Adldap\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adldap\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Adldap\\Laravel\\AdldapServiceProvider",
+                "Adldap\\Laravel\\AdldapAuthServiceProvider"
+            ],
+            "aliases": {
+                "Adldap": "Adldap\\Laravel\\Facades\\Adldap"
+            }
+        }
+    }
+}

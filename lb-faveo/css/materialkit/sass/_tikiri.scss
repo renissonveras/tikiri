@@ -1,0 +1,139 @@
+.box {
+
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+  /*  .card-height-indicator {
+        margin-top: 100%;
+    }
+    .card-content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }*/
+
+    border-radius: $border-radius-base;
+    color: $mdb-card-body-text;
+    background: $mdb-card-body-background;
+
+    @include shadow-2dp();
+
+    .box-image {
+        height: 60%;
+        position: relative;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            pointer-events: none;
+        }
+        .box-image-headline {
+            position: absolute;
+            bottom: 16px;
+            left: 18px;
+            color: $mdb-card-image-headline;
+            font-size: 2em;
+        }
+    }
+
+    .box-body{
+        padding: 15px;
+    }
+
+    .card-body {
+        height: 30%;
+        padding: 18px;
+    }
+
+    .box-footer {
+        height: 10%;
+        padding: 18px;
+        button, a {
+            margin: 0 !important;
+            position: relative;
+            bottom: 25px;
+            width: auto;
+            &:first-child {
+                left: -15px;
+            }
+        }
+    }
+
+    .box-header{
+        @include shadow-big();
+        margin: $margin-base;
+        border-radius: $border-radius-base;
+        padding: $padding-base;
+        background-color: $white-color;
+    }
+
+}
+
+.box-primary {
+    .box-header{
+        background: linear-gradient(60deg, $purple-400, $purple-700);
+        color: #FFFFFF;
+    }
+}
+.box-info {
+    .box-header{
+        background: linear-gradient(60deg, $light-blue-400, $light-blue-700);
+        color: #FFFFFF;
+    }
+}
+.box-success {
+    .box-header{
+        background: linear-gradient(60deg, $green-400, $green-700);
+        color: #FFFFFF;
+    }
+}
+.box-warning {
+    .box-header{
+        background: linear-gradient(60deg, $yellow-600, $yellow-700);
+        color: #FFFFFF;
+    }
+}
+.box-danger {
+    .box-header{
+        background: linear-gradient(60deg, $red-400, $red-700);
+        color: #FFFFFF;
+    }
+}
+
+/*.card-raised{*/
+.box-raised{
+    @include shadow-big();
+}
+
+/* .card-nav-tabs{ */
+.box-nav-tabs{
+    margin-top: 45px;
+
+    .header{
+        margin-top: -$margin-base * 2;
+    }
+    .box-tabs{
+        background: transparent;
+    }
+}
+
+/*.card-plain{*/
+.box-plain{
+    background: transparent;
+    box-shadow: none;
+
+    .header{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .content{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

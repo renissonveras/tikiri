@@ -1,0 +1,207 @@
+.index-page .wrapper > .header, .tutorial-page .wrapper > .header {
+    height: 400px;
+    padding-top: 100px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.index-page .brand {
+    margin-top: 10vh;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/*.navbar .navbar-nav > .active > a {
+    height: 1px;
+    padding: 0;
+}*/
+
+.white {
+	color: #FFFFFF;
+}
+
+.pre-hentry {
+    background-color: #fff;
+}
+
+.article-footer {
+    padding: 0px 15px 0px 0px;
+}
+@media (min-width: 768px){
+	.btn-kb {
+		margin-top: 2.5em;
+		margin-left: -8em;
+	}
+}
+.section {
+    margin-bottom: 20px;
+    padding: 10px 0; 
+}
+.nav-center {
+    text-align: center;
+}
+.nav-center .nav-pills-icons {
+    display: inline-block;
+}
+.nav-align-center {
+  text-align: center;
+}
+.nav-align-center .nav-pills {
+  display: inline-block;
+}
+.signup-page .footer .copyright, .signup-page .footer {
+    color: #FFFFFF;
+}
+.signup-page .footer .copyright {
+    padding: 8px 0;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.margin-bottom-extra {
+    margin-bottom: 1em;
+}
+.profile-div .profile img {
+    width: 150px;
+    height: 150px;
+    margin: -150px auto 0;
+}
+.profile-div .profile {
+    text-align: center;
+}
+.alert-dismissable .close {
+    font-size: 1.5em;
+    right: 10px;
+}
+.index-page .nav-thin {
+    padding-top: 0px;
+}
+.pad-side {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.bg-client {
+    background-color: #EEEEEE;
+}
+.wysihtml5-toolbar .btn {
+    padding: 12px 15px;
+}
+.text-red {
+    color: #BB0000;
+}
+.texteditor {
+    width: 100%; 
+    min-height: 150px; 
+    height: auto;
+}
+.wysihtml5-toolbar .ripple-container {
+    display: none;
+}
+.fa-ul {
+    margin-left: 4.14285714em;
+}
+
+/* Coments */
+
+.comments-area {
+    margin-bottom: 30px;
+}
+.comment-list,
+.comment-list .children {
+    list-style-type: none;
+    padding: 0;
+}
+.ie .comment-list {
+    margin-bottom: 30px;
+}
+.comment-list > .comment > .comment-body {
+    margin-top: 20px;
+    padding-top: 0;
+}
+.comment-list > .comment:first-child > .comment-body {
+    margin-top: 20px;
+}
+.comment-list > .comment:last-child > .comment-body {
+    margin-bottom: 30px;
+}
+.comment-content > ul,
+.comment-content > ol {
+    margin-bottom: 10px;
+}
+.comment-author .fn {
+    font-size: 1.15em;
+}
+.comment-author .fn,
+.comment-author .fn a {
+    color: inherit;
+    text-decoration: none !important;
+}
+.comment-author .avatar {
+    float: left;
+    margin-left: -14px;
+    margin-top: -4px;
+}
+.comment-meta {
+    margin-bottom: 1em;
+    padding: 5px 15px;
+    text-shadow: 0 1px #fff;
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid #999;
+    border-left-width: 5px;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+.comment-body:hover > .comment-meta {
+    border-color: #999;
+    background: rgba(0, 0, 0, 0.0185);
+}
+
+/*  User Login  */
+.comment-form .user-data {
+    margin-bottom: 20px;
+    padding: 15px 5px 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-color: #fff;
+}
+.comment-form .user-data .avatar {
+    border: 1px solid #fff;
+    border-bottom-width: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.comment-form .user-data .btn {
+    margin-top: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .comment-body {
+        margin-left: 25px;
+        padding: 20px 0 20px 25px;
+        position: relative;
+        border-bottom: 1px dotted #333;
+        border-left: 1px dotted #333;
+    }
+    .comment-list .children {
+        margin-left: 70px;
+    }
+    .comment-body {
+        padding-left: 45px;
+    }
+    .comment-author .avatar {
+        margin-left: -90px;
+        margin-top: -6px;
+        border: 1px solid #fff;
+        border-bottom-width: 4px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .comment-reply {
+        position: absolute;
+        top: 32px;
+        right: 15px;
+    }
+    .comment-list > .comment > .comment-body .comment-reply {
+        top: 12px;
+    }
+}

@@ -1,0 +1,60 @@
+.tabs-horizontal > .active, .tabs-stacked > .active, .skin-purple .main-header .navbar .sidebar-toggle:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+.skin-purple .main-header .logo:hover {
+    background: linear-gradient(60deg, #8e24aa, #ab47bc);
+}
+
+.skin-purple .main-header .navbar, .skin-purple .main-header .logo {
+    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+}
+
+.navbar-nav li.active:before {
+    border-bottom-color: white;
+}
+
+.btn-primary {
+    background-color: #9c27b0;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+}
+
+
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover {
+    background-color: #9c27b0;
+    border: none;
+    box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #9c27b0;
+    border: none;
+    box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);    
+}
+
+.box.box-info, .box.box-primary, .nav-tabs-custom > .nav-tabs > li.active {
+    border-top-color: #9c27b0;
+}
+
+.box-footer {
+    font-size: 80%;
+}
+
+.box-btn {
+    margin-right: 5px;
+    color: #fff;
+}
+
+#legend-holder { 
+    border: 1px solid #777; float: left; width: 15px; height: 15px; margin: 1px; 
+}
+
+.info-box {
+    margin-top: 20px;
+}
+
+.sidebar-menu > li .label, .sidebar-menu > li .badge {
+    padding-top: 5px;
+}
