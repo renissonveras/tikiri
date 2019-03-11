@@ -74,12 +74,12 @@ Instalar
 <ul>
 	<li>O Tikiri est&aacute; dispon&iacute;vel para download .zip execute o comando abaixo para descompactar:
 	<ul>
-		<li>unzip&nbsp;.&nbsp;Ex. unzip tikiri-master.zip</li>
+		<li>* unzip tikiri-master.zip</li>
 	</ul>
 	</li>
-	<li>Mova o diretório o nome que você preferir, no exemplo abaixo vamos instalar o tikiri em um subdiretório chamado suporte:
+	<li>Mova o diretório para o nome que você preferir, no exemplo abaixo vamos instalar o tikiri em um subdiretório chamado suporte:
 	<ul>
-		<li>mv tikiri-master suporte</li>
+		<li>* mv tikiri-master suporte</li>
 	</ul>
 	</li>	
 </ul>
