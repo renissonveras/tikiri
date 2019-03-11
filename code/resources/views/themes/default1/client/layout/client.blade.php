@@ -46,6 +46,13 @@
 		<script src="{{asset("lb-faveo/js/jquery2.1.1.min.js")}}" type="text/javascript"></script>
 		<script src="{{asset("lb-faveo/js/datepicker-pt-BR.js")}}" type="text/javascript"></script>
 		@yield('HeadInclude')
+		<style type="text/css" media="screen">
+
+			/*.index-page .header-filter:after {
+				background: none;
+			}*/
+			
+		</style>
 	</head>
 	<body class="index-page">
 		<!-- Navbar -->
@@ -70,7 +77,7 @@
 								@endif
 								@if($company->use_logo == 1)
 								<div class="logo">
-									<img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" width="100px" alt="Tikiri Logo" rel="tooltip" title="<b>Tikiri</b> é um software livre para  gestão de atendimentos" data-placement="bottom" data-html="true"/>
+									<img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" width="100px" alt="Tikiri Logo" rel="tooltip" title="<b>InfoRR</b> Soluções em Tecnologias" data-placement="bottom" data-html="true"/>
 								</div>
 								@else
 									@if($system->name)

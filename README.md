@@ -72,13 +72,16 @@ Instalar
 <p>3. Descompacte os arquivos no local desejado:</p>
 
 <ul>
-	<li>O Tikiri est&aacute; dispon&iacute;vel para download em tar.gz ou .zip execute um dos comandos abaixo de acordo com a vers&atilde;o que voc&ecirc; optou para o download:
+	<li>O Tikiri est&aacute; dispon&iacute;vel para download .zip execute o comando abaixo para descompactar:
 	<ul>
-		<li>tar - xzvf . Ex. tar -xzvf&nbsp;tikiri-master.tar.gz</li>
-		<li>ou</li>
 		<li>unzip&nbsp;.&nbsp;Ex. unzip tikiri-master.zip</li>
 	</ul>
 	</li>
+	<li>Mova o diretório o nome que você preferir, no exemplo abaixo vamos instalar o tikiri em um subdiretório chamado suporte:
+	<ul>
+		<li>mv tikiri-master suporte</li>
+	</ul>
+	</li>	
 </ul>
 
 <hr />
