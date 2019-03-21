@@ -481,6 +481,7 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::post('postform/{id}', 'Client\helpdesk\FormController@postForm'); /* post the AJAX form for create a ticket by guest user */
+    Route::get('ajax-department/{id}', 'Client\helpdesk\FormController@selectDepartmentAjax');
     Route::post('postedform', ['as'=>'client.form.post', 'uses'=>'Client\helpdesk\FormController@postedForm']); /* post the form to store the value */
     //Route::get('check', 'CheckController@getcheck'); //testing checkbox auto-populate
     //Route::post('postcheck/{id}', 'CheckController@postcheck');

@@ -23,10 +23,9 @@
                     <div class="col-md-12">
                         {!! Form::open(['url'=>'service-desk/attach-asset/ticket']) !!}
                         {!! Form::hidden('tiketid',$id) !!}
-                        <div id="response"></div>
+                        <div id="responseAsset"></div>
                     </div>
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" id="close" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
@@ -54,7 +53,7 @@
                 data: {'asset_type': type},
                 type: "post",
                 success: function (data) {
-                    $("#response").html(data);
+                    $("#responseAsset").html(data);
                 }
             });
         }

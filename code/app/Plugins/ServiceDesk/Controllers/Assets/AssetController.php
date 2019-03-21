@@ -93,9 +93,9 @@ class AssetController extends BaseServiceDeskController {
 			\App\Plugins\ServiceDesk\Controllers\Library\UtilityController::attachment($sd_assets->id, 'sd_assets', $request->file('attachments'));
 			$form = $request->except('organization', 'external_id', 'product_id', '_token', 'name', 'description', 'department_id', 'asset_type_id', 'impact_type_id', 'managed_by', 'used_by', 'location_id', 'assigned_on');
 			$this->storeAssetForm($sd_assets->id, $form);
-			//$result = ["success" => "Ativo $sd_assets->name criado com sucesso"];
-			//return response()->json(compact('result'));
-			return \Redirect::route('service-desk.asset.index')->with('message', "Ativo $sd_assets->name criado com sucesso");
+			$result = ["success" => "Ativo $sd_assets->name criado com sucesso"];
+			return response()->json(compact('result'));
+			//return \Redirect::route('service-desk.asset.index')->with('message', "Ativo $sd_assets->name criado com sucesso");
 		} catch (Exception $ex) {
 			//dd($ex);
 			$result = ["fails" => $ex->getMessage()];

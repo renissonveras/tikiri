@@ -50,6 +50,15 @@ class FormController extends Controller
         $this->TicketWorkflowController = $TicketWorkflowController;
     }
 
+    
+    public function selectDepartmentAjax($id=0)
+    {
+        if($id!=0){
+            $helptopics = Help_topic::select('id','topic')->where('department', '=', $id)->pluck('topic','id');
+            $data = view('themes.default1.client.helpdesk.ajax-department',compact('helptopics'))->render();
+            return response()->json(['options'=>$data]);
+        }
+    }
     /**
      * getform.
      *
@@ -66,7 +75,7 @@ class FormController extends Controller
         $settings = CommonSettings::select('status')->where('option_name', '=', 'send_otp')->first();
         $email_mandatory = CommonSettings::select('status')->where('option_name', '=', 'email_mandatory')->first();
         if (!\Auth::check() && ($settings->status == 1 || $settings->status == '1')) {
-            return redirect('auth/login')->with(['login_require' => 'Please login to your account for submitting a ticket', 'referer' => 'form']);
+            return redirect('auth/login')->with(['login_require' => 'Por favor faca o login para enviar um ticket', 'referer' => 'form']);
         }
        
         $location = GeoIP::getLocation();
@@ -312,7 +321,7 @@ class FormController extends Controller
         $helptopics = new Help_topic();
         $helptopic = $helptopics->find($helptopic_id);
         if (!$helptopic) {
-            throw new Exception('We can not find your request');
+            throw new Exception('Nao foi possivel encontrar sua solicitacao');
         }
         $custom_form = $helptopic->custom_form;
         if ($custom_form) {

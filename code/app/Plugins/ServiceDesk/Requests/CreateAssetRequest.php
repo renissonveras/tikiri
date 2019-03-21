@@ -33,11 +33,11 @@ class CreateAssetRequest extends Request {
 
     public function messages() {
         return[
-            'name.required' => 'Name field is required',
-            'description.required' => 'Description field is required',
-            'asset_type_id.required' => 'Asset Type field is required',
-            'external_id.unique'=>'This Identifirer has already taken, Try different',
-            'location_id.required' => 'Location field is required',
+            'name.required' => 'O nome é requerido',
+            'description.required' => 'A descrição requerida',
+            'asset_type_id.required' => 'O tipo de ativo é requerido',
+            'external_id.unique'=>'Este identificador já foi usado. Tente um diferente',
+            'location_id.required' => 'O local é requerido',
         ];
     }
 

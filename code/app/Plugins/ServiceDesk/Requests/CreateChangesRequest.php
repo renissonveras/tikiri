@@ -33,10 +33,10 @@ class CreateChangesRequest extends Request {
 
     public function messages() {
         return [
-            'status_id.required' => 'Staus Required',
-            'priority_id.required' => 'Priority Required',
-            'change_type_id.required' => 'Change Type Required',
-            'impact_id.required' => 'Inpact Required',
+            'status_id.required' => 'Status é requerido',
+            'priority_id.required' => 'Prioridade é requerida',
+            'change_type_id.required' => 'Tipo de mudança é requerida',
+            'impact_id.required' => 'Impacto é requerido',
         ];
     }
 

@@ -34,18 +34,18 @@ class CreateContractRequest extends Request {
     public function messages() {
         return [
 
-             "name.required" => "Name Required",
-             "description.required" => "Description Required",
-             "cost.required" => "Cost Required",
-             "contract_type_id.required" => "Contract Type Required",
-             "approver_id.required" => "Approver Required",
-             "vendor_id.required" => "Vendor Required",
-             "license_type_id.required" => "License Type Required",
-             "licensce_count.required" => "licensce Count Required",
-             "notify_expiry.required" => "Notify Expiry Required",
-             "product_id.required" => "Product Required",
-             "contract_start_date.required" => "Contract Start Date Required",
-             "contract_end_date.required" => "Contract End Date Required",
+             "name.required" => "Nome é requerido",
+             "description.required" => "Descrição é requerido",
+             "cost.required" => "Custo é requerido",
+             "contract_type_id.required" => "Tipo de contrato é requerido",
+             "approver_id.required" => "Aprovador é requerido",
+             "vendor_id.required" => "Fornecedor é requerido",
+             "license_type_id.required" => "Tipo de licença é requerida",
+             "licensce_count.required" => "Quantidade de licenças é requerida",
+             "notify_expiry.required" => "Notificar expiração é requerido",
+             "product_id.required" => "Produto é requerido",
+             "contract_start_date.required" => "Data de início do contrato é requerida",
+             "contract_end_date.required" => "Data de encerramento do contrato é requerida",
         ];
     }
 

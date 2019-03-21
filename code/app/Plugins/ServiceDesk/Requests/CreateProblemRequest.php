@@ -40,17 +40,16 @@ class CreateProblemRequest extends Request {
     public function messages() {
         return [
 
-            "from.required" => "From Required",
-            
-            "description.required" => "Description Required",
-            "department.required" => "Department Required",
-            "status_type_id.required" => "Status Type Required",
-            "priority_id.required" => "Priority Required",
-            "impact_id.required" => "impact Required",
-            "location_type_id.required" => "Location Type required",
-            "group_id.required" => "Group Required",
-            "agent_id.required" => "Agent Required",
-            "assigned_id.required" => "Assigned Required",
+            "from.required" => "Origem é requerida",
+            "description.required" => "Descrição é requerida",
+            "department.required" => "Departamento é requerido",
+            "status_type_id.required" => "Status é requerido",
+            "priority_id.required" => "Prioridade é requerido",
+            "impact_id.required" => "Impacto é requerido",
+            "location_type_id.required" => "Tipo de local é requerido",
+            "group_id.required" => "Grupo é requerido",
+            "agent_id.required" => "Agente é requerido",
+            "assigned_id.required" => "Associado é requerido",
         ];
     }
 

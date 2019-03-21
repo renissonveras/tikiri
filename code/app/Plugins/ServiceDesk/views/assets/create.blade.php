@@ -68,7 +68,7 @@
                 </div> 
                 <div class="col-md-6 form-group {{ $errors->has('organization') ? 'has-error' : '' }}">
                     {!! Form::label('organization',Lang::get('service::lang.organization')) !!}
-                    {!! Form::select('organization',[''=>Lang::get('lang.select'),'Organizations'=>$organizations],null,['class'=>'form-control','id'=>'org']) !!}
+                    {!! Form::select('organization',[''=>Lang::get('lang.select'),'Instituições'=>$organizations],null,['class'=>'form-control','id'=>'org']) !!}
                 </div>
                 <div class="form-group col-md-6 {{ $errors->has('location_id') ? 'has-error' : '' }}">
                     <label class="control-label">{{Lang::get('service::lang.location')}}</label>
@@ -201,10 +201,10 @@
                     console.log(json.result);
                     var res = "";
                     $.each(json.result, function (idx, topic) {
-                        if (idx === "success") {
+                        if (idx == "success") {
                             res = "<div class='alert alert-success'>" + topic + "</div>";
                         }
-                        if (idx === "fails") {
+                        if (idx == "fails") {
                             res = "<div class='alert alert-danger'>" + topic + "</div>";
                         }
                     });

@@ -49,6 +49,15 @@ class = "active"
 @stop
 <!-- content -->
 @section('content')
+<div id="loader" style="display:none;">
+    <div class="col-xs-5">
+    </div>
+    <div class="col-xs-1">
+        <img src="{{asset("lb-faveo/media/images/gifloader.gif")}}"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+    <div class="col-xs-6">
+    </div>
+</div>
 <div id="content" class="site-content col-md-9">
     @if(Session::has('message'))
     <div class="alert alert-success alert-dismissable">
@@ -152,6 +161,19 @@ class = "active"
  
            @endif
             <div class="col-md-12 form-group {{ $errors->has('help_topic') ? 'has-error' : '' }}">
+                {!! Form::label('department', Lang::get('lang.select_a_department')) !!} 
+                {!! $errors->first('help_topic', '<spam class="help-block">:message</spam>') !!}
+                <?php
+                $departments = App\Model\helpdesk\Agent\Department::where('type', '=', 1)->get();
+                ?>                  
+                <select name="department" class="form-control" id="department">
+                    <option>--- {!! Lang::get('lang.select_a_department') !!} ---</option>
+                    @foreach($departments as $department)
+                    <option value="{!! $department->id !!}">{!! $department->name !!}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div style="display: none;" id="divHelpTopic" class="col-md-12 form-group {{ $errors->has('help_topic') ? 'has-error' : '' }}">
                 {!! Form::label('help_topic', Lang::get('lang.choose_a_help_topic')) !!} 
                 {!! $errors->first('help_topic', '<spam class="help-block">:message</spam>') !!}
                 <?php
@@ -190,7 +212,7 @@ class = "active"
            @endif
             @endif
             @endif
-            <div class="col-md-12 form-group {{ $errors->has('Subject') ? 'has-error' : '' }}">
+            <div  style="display: none;" id="divSubject" class="col-md-12 form-group {{ $errors->has('Subject') ? 'has-error' : '' }}">
                 {!! Form::label('Subject',Lang::get('lang.subject')) !!}<span class="text-red"> *</span>
                 {!! Form::text('Subject',null,['class' => 'form-control']) !!}
             </div>
@@ -222,12 +244,15 @@ class = "active"
 -->
 <script type="text/javascript">
 $(document).ready(function(){
+   
    var helpTopic = $("#selectid").val();
    send(helpTopic);
+   
    $("#selectid").on("change",function(){
        helpTopic = $("#selectid").val();
        send(helpTopic);
    });
+   
    function send(helpTopic){
        $.ajax({
            url:"{{url('/get-helptopic-form')}}",
@@ -242,11 +267,32 @@ $(document).ready(function(){
            }
        });
    }
+
+    $('#department').on('change', function (e) {
+        $.ajax({
+            type: "GET",
+            url: "ajax-department/" + $("#department").val(),
+            beforeSend: function () {
+                $("#loader").show();
+                $("#selectid").html('');
+            },
+            success: function (response) {
+                $("#loader").hide();
+                $("#divSubject").show();
+                $("#divHelpTopic").show();
+                $("#selectid").html('');
+                $("#selectid").html(response.options);              
+            }
+        })
+        return false;
+    });
+
 });
 
 $(function() {
 //Add text editor
     $("textarea").wysihtml5();
 });
+
 </script>
 @stop
