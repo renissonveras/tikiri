@@ -49,7 +49,7 @@
             </div>
             <div class="form-group col-md-6 {{ $errors->has('approvers') ? 'has-error' : '' }}">
                 {!! Form::label('approvers',Lang::get('service::lang.members')) !!}
-                {!! Form::select('approvers',[''=>Lang::get('lang.select'),Lang::get('lang.agents')=>$agents],null,['class'=>'form-control','multiple'=>true]) !!}             
+                {!! Form::select('approvers[]',[''=>Lang::get('lang.select'),Lang::get('lang.agents')=>$agents],null,['class'=>'form-control','multiple'=>true]) !!}
             </div>
             <div class="form-group col-md-6 {{ $errors->has('aproval_mandatory') ? 'has-error' : '' }}">
                 <div class="col-md-12">

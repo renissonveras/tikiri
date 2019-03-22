@@ -72,7 +72,7 @@ class CabController extends BaseServiceDeskController {
         try {
             $cabs = new Cab();
             $cabs->fill($request->input())->save();
-            return redirect()->back()->with('success', Lang::get('service::lang.sucess_on_operation'));
+            return redirect()->back()->with('success', \Lang::get('service::lang.sucess_on_operation'));
         } catch (Exception $ex) {
             return redirect()->back()->with('fails', $ex->getMessage());
         }
@@ -84,9 +84,9 @@ class CabController extends BaseServiceDeskController {
         ]);
         try {
             $cabs = new Cab();
-            $cab = $cabs->find($id);
+            $cab = $cabs->find($id);           
             $cab->fill($request->input())->save();
-            return redirect()->back()->with('success', Lang::get('service::lang.sucess_on_operation'));
+            return redirect()->back()->with('success', \Lang::get('service::lang.sucess_on_operation'));
         } catch (Exception $ex) {
             return redirect()->back()->with('fails', $ex->getMessage());
         }
