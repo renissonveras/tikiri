@@ -77,7 +77,7 @@
 								@endif
 								@if($company->use_logo == 1)
 								<div class="logo">
-									<img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" width="100px" alt="Tikiri Logo" rel="tooltip" title="<b>InfoRR</b> Soluções em Tecnologias" data-placement="bottom" data-html="true"/>
+									<img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" width="100px" alt="Tikiri Logo" rel="tooltip" title="<b>Tikiri</b> gestão de suporte técnico open-source" data-placement="bottom" data-html="true"/>
 								</div>
 								@else
 									@if($system->name)
