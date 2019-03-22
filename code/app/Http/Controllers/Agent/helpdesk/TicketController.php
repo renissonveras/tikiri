@@ -2564,7 +2564,7 @@ class TicketController extends Controller
 			})
 			->addColumn('assign_user_name', function ($tickets) {
 				if ($tickets->assigned_to == null) {
-					return "<span style='color:red'>Não Atribuído</span>";
+					return "<span style='color:red'>Falta Atribuir</span>";
 				} else {
 					$assign = $tickets->assign_user_name;
 					$url = route('user.show', $tickets->assigned_to);
