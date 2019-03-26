@@ -806,7 +806,7 @@ alert(h+20);
         <div class="modal fade" id="Edit">
             <div class="modal-dialog" style="width:60%;height:70%;">
                 <div class="modal-content">
-                    {!! Form::model($tickets->id, ['id'=>'form','method' => 'PATCH'] )!!}
+                    {!! Form::model($tickets->id, ['id'=>'formEdit','method' => 'PATCH'] )!!}
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidd en="true">&times;</span></button>
                         <h4 class="modal-title">{!! Lang::get('lang.edit') !!} <b>[#{!! $tickets->ticket_number !!}]</b>[{!! $user->user_name !!}]</h4>
@@ -1558,7 +1558,7 @@ alert(h+20);
             // });
 
 // Edit a ticket
-            $('#form').on('submit', function() {
+            $('#formEdit').on('submit', function() {
     $.ajax({
     type: "POST",
             url: "../ticket/post/edit/{{$tickets->id}}",
@@ -1612,18 +1612,17 @@ alert(h+20);
                     $("#assign_loader").show();
             },
             success: function(response) {
-            if (response == 1)
-            {
+            //if (response == 1) {
             // $("#assign_body").show();
             // var message = "Success";
             // $('#message-success1').html(message);
             // setInterval(function(){$("#alert11").hide(); },4000);   
             location.reload();
-            var message = "Success!";
+            var message = "Sucesso!";
                     $("#alert11").show();
                     $('#message-success1').html(message);
-                    setInterval(function(){$("#dismiss11").trigger("click"); }, 2000);
-            }
+                    setInterval(function(){$("#dismiss11").trigger("click"); }, 1000);
+            //}
             $("#assign_body").show();
                     $("#assign_loader").hide();
                     $("#dismis4").trigger("click");

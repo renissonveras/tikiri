@@ -460,14 +460,14 @@ if (Auth::user()->role == 'agent') {
                     $("#assign_loader").show();
                 },
                 success: function(response) {
-                    if (response == 1)
-                    {
+                    /*if (response == 1)
+                    {*/
                         location.reload();
-                        var message = "Success!";
+                        var message = "Successo!";
                             $("#alert11").show();
                             $('#message-success1').html(message);
-                            setInterval(function(){$("#dismiss11").trigger("click"); }, 2000);
-                    }
+                            setInterval(function(){$("#dismiss11").trigger("click"); }, 1000);
+                    //}
                     $("#assign_body").show();
                     $("#assign_loader").hide();
                     $("#dismis4").trigger("click");

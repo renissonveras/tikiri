@@ -219,11 +219,11 @@ class="active"
     </div>
 </div>
 
-<form action="{!! route('help.topic.pdf') !!}" method="POST" id="form_pdf">
+{!! Form::open(['route'=>'help.topic.pdf','method' => 'post','id' => 'form_pdf']) !!}
     <input type="hidden" name="pdf_form" value="" id="pdf_form">
     <input type="hidden" name="pdf_form_help_topic" value="" id="pdf_form_help_topic">
     <input type="submit" style="display:none;">
-</form>
+{!! Form::close() !!}
 
 <div id="refresh"> 
     <script src="{{asset("lb-faveo/plugins/chartjs/Chart.min.js")}}" type="text/javascript"></script>
