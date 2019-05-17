@@ -97,10 +97,10 @@ return [
 		'show-release'=>'Mostrar Release',
 		/*
 			|--------------------------------------
-			|   Mundanças
+			|   Mudanças
 			|--------------------------------------
 		 */
-		'changes' => 'Mundanças',
+		'changes' => 'Mudanças',
 		'new_changes' => 'Nova Mudança',
 		'reason' => 'Motivo',
 		'impact' => 'Impacto',
