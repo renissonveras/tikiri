@@ -64,7 +64,7 @@ class MailController extends Controller
      */
     public function separate_reply($body)
     {
-        $body2 = explode('---Reply above this line---', $body);
+        $body2 = explode('---Responder acima desta linha---', $body);
         $body3 = $body2[0];
 
         return $body3;
@@ -194,7 +194,7 @@ class MailController extends Controller
             $body = $message->getMessageBody();
         }
         $body = $this->separateReply($body);
-        $subject = $message->getSubject();
+        $subject = mb_convert_encoding($message->getSubject(), 'HTML-ENTITIES', "UTF-8");
         $address = $message->getAddresses('reply-to');
         if (!$address) {
             $address = $message->getAddresses('from');

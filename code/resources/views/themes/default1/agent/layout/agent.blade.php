@@ -175,13 +175,13 @@
 											@if($notification->is_read == 1)
 											<li  class="task" style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
 													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
-														{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"
+														{!! $notification->notification->type->message !!} com id "{!!$notification->notification->model->ticket_number!!}"
 													</a></span>
 											</li>
 											@elseif($notification->notification->model)
 											<li style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
 													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
-														{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"
+														{!! $notification->notification->type->message !!} com id "{!!$notification->notification->model->ticket_number!!}"
 													</a></span>
 											</li>
 											@endif
