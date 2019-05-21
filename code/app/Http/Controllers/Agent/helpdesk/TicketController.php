@@ -2504,7 +2504,7 @@ class TicketController extends Controller
 			})
 			->addColumn('title', function ($tickets) {
 				if (isset($tickets->ticket_title)) {
-					$string = str_limit($tickets->ticket_title, 20);
+					$string = str_limit(iconv_mime_decode($tickets->ticket_title, 0, "utf8"), 20);
 				} else {
 					$string = '(sem assunto)';
 				}
