@@ -36,9 +36,9 @@ class ServiceProvider extends \App\Plugins\ServiceProvider {
         $controller = new Controllers\ActivateController();
         $controller->activate();
         
-        if (class_exists('Breadcrumbs')){
+        /*if (class_exists('Breadcrumbs')){
             require __DIR__ . '/breadcrumbs.php';
-        }   
+        } */  
         
         parent::boot('Gamification');
 

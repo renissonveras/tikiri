@@ -27,7 +27,7 @@ class StatusRequest extends Request
             'name'            => 'required',
             'sort'            => 'required|numeric',
             'icon_class'      => 'required',
-
+            'email_user'      => 'required',
         ];
     }
 }

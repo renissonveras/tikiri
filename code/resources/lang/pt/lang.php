@@ -1239,7 +1239,7 @@ return [
 
 		'status_msg1'                           => 'Ao selecionar SIM uma notificação por e-mail será enviado para o usuário.',
 		'notify_user'                           => 'Notificar o usuário sobre este status?',
-		'deleted_status'                        => 'Deseja deletar o status do ticket?',
+		'deleted_status'                        => 'Alterar status do ticket para excluido?',
 		'resolved_status'                       => 'Alterar status do ticket para resolvido?',
 		'status_msg3'                           => 'Ao selecionar Sim, o status do ticket será alterado para resolvido.',
 		'status_msg2'                           => 'Ao selecionar Sim, o status do ticket será alterado para excluído',

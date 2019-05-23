@@ -90,7 +90,7 @@ class="active"
             <div class="callout callout-default" style="font-style: oblique;">{!! Lang::get('lang.status_msg2') !!}</div>
             <div class="row">
                 <div class="col-xs-3">
-                    {!! Form::radio('delete','yes') !!} {{Lang::get('lang.yes')}}
+                    {!! Form::radio('delete','deleted') !!} {{Lang::get('lang.yes')}}
                 </div>
                 <div class="col-xs-3">
                     {!! Form::radio('delete','no') !!} {{Lang::get('lang.no')}}
@@ -103,10 +103,10 @@ class="active"
             <div class="callout callout-default" style="font-style: oblique;">{!! Lang::get('lang.status_msg1') !!}</div>
             <div class="row">
                 <div class="col-xs-3">
-                    {!! Form::radio('email_user','yes') !!} {{Lang::get('lang.yes')}}
+                    {!! Form::radio('email_user',1) !!} {{Lang::get('lang.yes')}}
                 </div>
                 <div class="col-xs-3">
-                    {!! Form::radio('email_user','no') !!} {{Lang::get('lang.no')}}
+                    {!! Form::radio('email_user',0) !!} {{Lang::get('lang.no')}}
                 </div>
             </div>        
         </div>

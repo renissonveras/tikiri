@@ -123,7 +123,7 @@
 							<li class="dropdown notifications-menu" id="myDropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="myFunction()">
 									<i class="fa fa-bell-o"></i>
-									<span class="label label-danger" id="count">{!! $notifications->count() !!}</span>
+									<span class="label label-danger" id="count">{!! $notifications->where('is_read', 0)->count() !!}</span>
 								</a>
 								<ul class="dropdown-menu" style="width:500px">
 
@@ -135,7 +135,7 @@
 
 									<li id="refreshNote">
 
-									<li class="header">Você tem {!! $notifications->count() !!} notificações. <a class="pull-right" id="read-all" href="#">Marcar todas como lidas.</a></li>
+									<li class="header">Você tem {!! $notifications->where('is_read', 0)->count() !!} notificações. <a class="pull-right" id="read-all" href="#">Marcar todas como lidas.</a></li>
 
 									<ul class="menu">
 										@if($notifications->count())
@@ -143,14 +143,14 @@
 
 										@if($notification->notification->type->type == 'registration')
 											@if($notification->is_read == 1)
-											<li class="task" style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
-													<a href="{!! route('user.show', $notification->notification->model_id) !!}" id="{{$notification -> notification_id}}" class='noti_User'>
+											<li class="task" style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
+													<a href="{!! route('user.show', $notification->notification->model_id) !!}" id="{{$notification->notification_id}}" class='noti_User'>
 														{!! $notification->notification->type->message !!}
 													</a></span>
 											</li>
 											@else
-											<li style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
-													<a href="{!! route('user.show', $notification->notification->model_id) !!}" id="{{$notification -> notification_id}}" class='noti_User'>
+											<li style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
+													<a href="{!! route('user.show', $notification->model_id) !!}" id="{{$notification->notification_id}}" class='noti_User'>
 														{!! $notification->notification->type->message !!}
 													</a></span>
 											</li>
@@ -158,14 +158,14 @@
 										@elseif($notification->notification->type->type == 'game')
 											@if (Route::has('gamification.userbadges.agentsNotifications'))
 												@if($notification->is_read == 1)
-												<li class="task" style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
-														<a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification -> notification_id}}" class='noti_User'>
+												<li class="task" style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
+														<a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification->notification_id}}" class='noti_User'>
 															{!! $notification->notification->type->message !!}
 														</a></span>
 												</li>
 												@else
-												<li style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
-														<a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification -> notification_id}}" class='noti_User'>
+												<li style="list-style: none; margin-left: -30px;"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="user-image"  style="width:6%;height: 5%" alt="User Image" />
+														<a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification->notification_id}}" class='noti_User'>
 															{!! $notification->notification->type->message !!}
 														</a></span>
 												</li>
@@ -173,14 +173,14 @@
 											@endif
 										@else
 											@if($notification->is_read == 1)
-											<li  class="task" style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
-													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
+											<li  class="task" style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
+													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id}}' class='noti_User'>
 														{!! $notification->notification->type->message !!} com id "{!!$notification->notification->model->ticket_number!!}"
 													</a></span>
 											</li>
 											@elseif($notification->notification->model)
-											<li style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification -> users -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
-													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
+											<li style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$notification->users->profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
+													<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id}}' class='noti_User'>
 														{!! $notification->notification->type->message !!} com id "{!!$notification->notification->model->ticket_number!!}"
 													</a></span>
 											</li>
@@ -269,19 +269,19 @@
 						
 						<li @yield('inbox')>
 							 <a href="{{ url('/ticket/inbox')}}" id="load-inbox">
-								<i class="fa fa-envelope"></i> <span>{!! Lang::get('lang.inbox') !!}</span> <small class="label pull-right bg-green">{{$tickets -> count()}}</small>                                            
+								<i class="fa fa-envelope"></i> <span>{!! Lang::get('lang.inbox') !!}</span> <small class="label pull-right bg-green">{{$tickets->count()}}</small>                                            
 							</a>
 						</li>
 						<li @yield('myticket')>
 							 <a href="{{url('ticket/myticket')}}" id="load-myticket">
 								<i class="fa fa-user"></i> <span>{!! Lang::get('lang.my_tickets') !!} </span>
-								<small class="label pull-right bg-green">{{$myticket -> count()}}</small>
+								<small class="label pull-right bg-green">{{$myticket->count()}}</small>
 							</a>
 						</li>
 						<li @yield('unassigned')>
 							 <a href="{{url('unassigned')}}" id="load-unassigned">
 								<i class="fa fa-th"></i> <span>{!! Lang::get('lang.unassigned') !!}</span>
-								<small class="label pull-right bg-green">{{$unassigned -> count()}}</small>
+								<small class="label pull-right bg-green">{{$unassigned->count()}}</small>
 							</a>
 						</li>
 						<li @yield('overdue')>
@@ -294,7 +294,7 @@
 						<li @yield('trash')>
 							 <a href="{{url('trash')}}">
 								<i class="fa fa-trash-o"></i> <span>{!! Lang::get('lang.trash') !!}</span>
-								<small class="label pull-right bg-green">{{$deleted -> count()}}</small>
+								<small class="label pull-right bg-green">{{$deleted->count()}}</small>
 							</a>
 						</li>
 						<li class="header">{!! Lang::get('lang.Departments') !!}</li>

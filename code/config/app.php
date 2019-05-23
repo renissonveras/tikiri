@@ -183,7 +183,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Bus\BusServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        'App\Plugins\ServiceDesk\ServiceProvider',
+//
         'App\Plugins\Gamification\ServiceProvider',
         App\FaveoLog\LaravelLogViewerServiceProvider::class,
         App\FaveoStorage\StorageServiceProvider::class,

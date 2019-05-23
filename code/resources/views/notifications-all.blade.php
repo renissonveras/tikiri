@@ -124,16 +124,16 @@ class="active"
 										<!-- drag handle -->
 
 										<!-- checkbox -->
-										<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+										<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification->notification_id}}">
 										<label for='cl'  data-toggle="tooltip"  data-placement="top" title="Marcar como lida"><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle" style="width:25px;height: 25px" alt="User Image" />
 											<!-- todo text -->
-											<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification -> notification_id) !!}" id="{{$notification -> notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
-											<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
+											<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification->notification_id) !!}" id="{{$notification->notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
+											<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
 
 										<!-- General tools such as edit or delete-->
 										<div class="tools">
-											<a href="{!! route('user.show', $notification -> notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification -> notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
-											<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+											<a href="{!! route('user.show', $notification->notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification->notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
+											<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 										</div>
 									</li>
 									@else
@@ -141,16 +141,16 @@ class="active"
 										<!-- drag handle -->
 
 										<!-- checkbox -->
-										<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+										<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification->notification_id}}">
 										<label for='cl'  data-toggle="tooltip"  data-placement="top" title="Marcar como lida"><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px"  alt="User Image" />
 											<!-- todo text -->
-											<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification -> notification_id) !!}" id="{{$notification -> notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
-											<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
+											<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification->notification_id) !!}" id="{{$notification->notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
+											<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
 
 										<!-- General tools such as edit or delete-->
 										<div class="tools">
-											<a href="{!! route('user.show', $notification -> notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification -> notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
-											<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+											<a href="{!! route('user.show', $notification->notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification->notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
+											<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 										</div>
 									</li>
 									@endif
@@ -161,16 +161,16 @@ class="active"
 												<!-- drag handle -->
 
 												<!-- checkbox -->
-												<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+												<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification->notification_id}}">
 												<label for='cl'  data-toggle="tooltip"  data-placement="top" title="Marcar como lida"><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle" style="width:25px;height: 25px" alt="User Image" />
 													<!-- todo text -->
-													<h6 class="textcontent marginzero"><a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification -> notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
-													<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
+													<h6 class="textcontent marginzero"><a href="{!! route('gamification.userbadges.agentsNotifications') !!}" id="{{$notification->notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
+													<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
 
 												<!-- General tools such as edit or delete-->
 												<div class="tools">
-													<a href="{!! route('gamification.userbadges.agentsNotifications') !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification -> notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
-													<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+													<a href="{!! route('gamification.userbadges.agentsNotifications') !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification->notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
+													<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 												</div>
 											</li>
 											@else
@@ -178,16 +178,16 @@ class="active"
 												<!-- drag handle -->
 
 												<!-- checkbox -->
-												<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+												<input type="checkbox" value="" name="cc" class="noti_User clickfun" id="{{$notification->notification_id}}">
 												<label for='cl'  data-toggle="tooltip"  data-placement="top" title="Marcar como lida"><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px"  alt="User Image" />
 													<!-- todo text -->
-													<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification -> notification_id) !!}" id="{{$notification -> notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
-													<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
+													<h6 class="textcontent marginzero"><a href="{!! route('user.show', $notification->notification_id) !!}" id="{{$notification->notification_id}}" class='noti_User'>{!! $notification->notification->type->message !!}</a></h6>
+													<small class="label label-danger"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small></label> <!-- Emphasis label -->
 
 												<!-- General tools such as edit or delete-->
 												<div class="tools">
-													<a href="{!! route('user.show', $notification -> notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification -> notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
-													<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+													<a href="{!! route('user.show', $notification->notification_id) !!}"  data-toggle="tooltip"  data-placement="top" title="Ver" id="{{$notification->notification_id}}" class='noti_User'><i class="fa fa-eye"></i></a>
+													<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 												</div>
 											</li>
 											@endif
@@ -195,24 +195,24 @@ class="active"
 									@else
 									@if($notification && $notification->notification && $notification->notification->type && $notification->is_read == 1)
 									<li class="task">
-										<input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Marcar como lida" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+										<input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Marcar como lida" class="noti_User clickfun" id="{{$notification->notification_id}}">
 										<label for='cl'><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px" alt="User Image" />
-											<h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} {!! Lang::get('lang.with-id') !!} "{!!$notification->notification->model->ticket_number!!}"</a></h6>
-											<small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small>
+											<h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} {!! Lang::get('lang.with-id') !!}</a></h6>
+											<small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small>
 										</label><div class="tools">
-											<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}'  data-toggle="tooltip"  data-placement="top" title="Ver" class='noti_User'><i class="fa fa-eye"></i></a>
-											<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+											<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id }}'  data-toggle="tooltip"  data-placement="top" title="Ver" class='noti_User'><i class="fa fa-eye"></i></a>
+											<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 										</div>
 									</li>
 									@elseif($notification->notification && $notification->notification->model)
 																		<li>
-										<input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Marcar como lida" class="noti_User clickfun" id="{{$notification -> notification_id}}">
+										<input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Marcar como lida" class="noti_User clickfun" id="{{$notification->notification_id}}">
 										<label for='cl'><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px"  alt="User Image" />
-											<h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
-											<small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification -> created_at->format("d/m/Y H:i:s") }}</small>
+											<h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
+											<small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification->created_at->format("d/m/Y H:i:s") }}</small>
 										</label><div class="tools">
-											<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}'  data-toggle="tooltip"  data-placement="top" title="Ver" class='noti_User'><i class="fa fa-eye"></i></a>
-											<a href="#" id='{{ $notification -> notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
+											<a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification->notification_id }}'  data-toggle="tooltip"  data-placement="top" title="Ver" class='noti_User'><i class="fa fa-eye"></i></a>
+											<a href="#" id='{{ $notification->notification_id }}' data-toggle="tooltip"  data-placement="top" title="Excluir" class='notification-delete clickfun'><i class="fa fa-trash-o"></i></a>
 										</div>
 									</li>
 									@endif

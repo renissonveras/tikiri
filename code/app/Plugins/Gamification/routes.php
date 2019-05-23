@@ -35,16 +35,18 @@ Route::group(['prefix' => 'gamification', 'middleware' => ['web', 'auth']], func
 		echo $controller->clientMenu();
 	});
 
+
 	\Event::listen('Create-Ticket', function($data) {
 		$controller = new App\Plugins\Gamification\Controllers\GaUserBadgesController();
 		$badgeData = [
-			'user_id'      => Auth::user()->id,
+			'user_id'      => NULL,
 			'badge_id'     => 19,
-			'added_user_id' => Auth::user()->id,
+			'added_user_id' => NULL,
 		];        
 		$controller->storePoints($badgeData);
 		//dd($data);
 	});	
+	
 
 	\Event::listen('Ticket-Rating', function($data) {
 		$controller = new App\Plugins\Gamification\Controllers\GaUserBadgesController();
@@ -72,7 +74,7 @@ Route::group(['prefix' => 'gamification', 'middleware' => ['web', 'auth']], func
 		$badgeData = [
 			'user_id'		=> $data["assigned_to"],
 			'badge_id'		=> $badgeId,
-			'added_user_id' => Auth::user()->id,
+			'added_user_id' => NULL,
 			'rating_value'	=> $data["rating_value"],
 		];
 		if ($badgeId > 0) {
@@ -84,9 +86,9 @@ Route::group(['prefix' => 'gamification', 'middleware' => ['web', 'auth']], func
 	\Event::listen('Article-Create', function() {
 		$controller = new App\Plugins\Gamification\Controllers\GaUserBadgesController();
 		$badgeData = [
-			'user_id'      => Auth::user()->id,
+			'user_id'      => NULL,
 			'badge_id'     => 20,
-			'added_user_id' => Auth::user()->id,
+			'added_user_id' => NULL,
 		];        
 		$controller->storePoints($badgeData);
 		//dd($data);

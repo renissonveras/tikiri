@@ -712,9 +712,15 @@ alert(h+20);
    jQuery('#loader_frame{{$conversation->id}}').css('width','100%');
    jQuery('#loader_frame{{$conversation->id}}').css('position','static');
    jQuery('#loader_frame{{$conversation->id}}').css('border','none');
+
    var mydiv = jQuery('#loader_frame{{$conversation->id}}').contents().find("body");
    var h     = mydiv.height();
+   if (h<10) {
+        h     = mydiv.innerHeight();
+   }
+   //alert(mydiv.innerHeight());
    jQuery('#loader_frame{{$conversation->id}}').css('height', h+20);
+   jQuery('#loader_frame{{$conversation->id}}').css('min-height', 80);   
    setInterval(function(){
    //var mydiv = jQuery('#loader_frame{{$conversation->id}}').contents().find("body");
    //alert(mydiv.height());

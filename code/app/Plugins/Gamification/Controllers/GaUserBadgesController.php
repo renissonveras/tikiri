@@ -299,14 +299,14 @@ class GaUserBadgesController extends BaseGamificationController
 	{
 		try {
 			$gaUserBadges = new GaUserBadges;
-			$gaUserBadges->user_id = $data["user_id"];
+			$gaUserBadges->user_id = Auth::user()->id;
 			$gaUserBadges->badge_id = $data["badge_id"];
 			$badge = GaBadge::where([['id', $data["badge_id"]],['isactive', 1]])->first();
-			if (!empty($badge)) {
+			if (!empty($badge) & !empty($gaUserBadges->user_id)) {
 				$gaUserBadges->added_date = date('Y-m-d H:i:s');
-				$gaUserBadges->added_user_id = $data["added_user_id"];
-				$maxXp= GaUserBadges::where([['type_id', 3],['user_id',$data["user_id"]]])->max('total_xp_in_moment');
-				$maxCredit = GaUserBadges::where([['type_id', 4],['user_id',$data["user_id"]]])->max('total_credits_in_moment');
+				$gaUserBadges->added_user_id = Auth::user()->id;
+				$maxXp= GaUserBadges::where([['type_id', 3],['user_id',Auth::user()->id]])->max('total_xp_in_moment');
+				$maxCredit = GaUserBadges::where([['type_id', 4],['user_id',Auth::user()->id]])->max('total_credits_in_moment');
 				$gaUserBadges->type_id = $badge->type_id;
 				if ($badge->isdeduct==1) {
 					$gaUserBadges->deducted_xp = $badge->xp;

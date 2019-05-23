@@ -656,10 +656,10 @@ class SettingsController extends Controller
             $statuss = \App\Model\helpdesk\Ticket\Ticket_Status::whereId($id)->first();
             $statuss->name = $request->input('name');
             $statuss->icon_class = $request->input('icon_class');
-            $statuss->email_user = $request->input('email_user');
+            echo $statuss->email_user = $request->input('email_user');
             $statuss->sort = $request->input('sort');
             $delete = $request->input('deleted');
-            if ($delete == 'yes') {
+            if ($delete == 'deleted') {
                 $statuss->state = 'delete';
             } else {
                 $statuss->state = $request->input('state');
@@ -667,7 +667,7 @@ class SettingsController extends Controller
             $statuss->sort = $request->input('sort');
             $statuss->save();
             /* Direct to Company Settings Page */
-            return redirect()->back()->with('success', Lang::get('lang.status_has_been_updated_successfully'));
+            //return redirect()->back()->with('success', Lang::get('lang.status_has_been_updated_successfully'));
         } catch (Exception $e) {
             return redirect()->back()->with('fails', $e->getMessage());
         }
