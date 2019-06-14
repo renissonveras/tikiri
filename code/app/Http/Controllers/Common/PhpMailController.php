@@ -155,7 +155,7 @@ class PhpMailController extends Controller
             }
 
             if ($template_type == 'ticket-reply-agent') {
-                $line = '---Reply above this line--- <br/><br/>';
+                $line = '---Responda antes desta linha--- <br/><br/>';
                 $content = $line.$messagebody;
             } else {
                 $content = $messagebody;

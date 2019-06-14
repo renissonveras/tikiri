@@ -519,7 +519,7 @@ class TicketController extends Controller
 			// sending attachments via php mail function
 			$message = '';
 
-			$line = '---Reply above this line---<br><br>';
+			$line = '---Responda antes desta linha---<br><br>';
 			$collaborators = Ticket_Collaborator::where('ticket_id', '=', $ticket_id)->get();
 			$emails = Emails::where('department', '=', $tickets->dept_id)->first();
 			if (!$email) {
@@ -1018,7 +1018,7 @@ class TicketController extends Controller
 			$separate = explode(']', $read_ticket_number[1]);
 			$new_subject = substr($separate[0], 0, 20);
 			$find_number = Tickets::where('ticket_number', '=', $new_subject)->first();
-			$thread_body = explode('---Reply above this line---', $body);
+			$thread_body = explode('---Responda antes desta linha---', $body);
 			$body = $thread_body[0];
 			if (count($find_number) > 0) {
 				$id = $find_number->id;

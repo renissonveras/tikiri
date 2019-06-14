@@ -377,7 +377,7 @@ class MailController extends Controller
      */
     public function separateReply($body)
     {
-        $body2 = explode('---Reply above this line---', $body);
+        $body2 = explode('---Responda antes desta linha---', $body);
         if (is_array($body2) && array_key_exists(0, $body2)) {
             $body = $body2[0];
         }
