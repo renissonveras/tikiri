@@ -47,7 +47,7 @@ class Kernel extends ConsoleKernel
         switch ($task) {
             case 'fetching':
                 $this->getCondition($schedule->command('ticket:fetch'), $command);
-                $this->getCondition($schedule->command('ldap:importar --no-interaction'), $command);
+		// $this->getCondition($schedule->command('ldap:importar --no-interaction'), $command);
                 break;
             case 'notification':
                 $this->getCondition($schedule->command('report:send'), $command);
