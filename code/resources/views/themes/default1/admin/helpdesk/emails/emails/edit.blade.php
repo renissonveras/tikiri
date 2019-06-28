@@ -255,10 +255,10 @@ class="active"
                     <br/>
                     <br/>
                     <br/>
-                    <center><h3 style="color:#80DE02;">Testing incoming & outgoing mail server</h3></center>
+                    <center><h3 style="color:#80DE02;">Testando servidores de entrada e saída de emails</h3></center>
                     <br/>
-                    <center><h4>Please wait while testing is in progress ...</h4></center>
-                    <center><h4>(Please do not use "Refresh" or "Back" button)</h4></center>
+                    <center><h4>Por favor, aguarde enquanto o teste está em andamento ...</h4></center>
+                    <center><h4>(Por favor, não use o botão "Atualizar" ou "Voltar")</h4></center>
                     <br/>
                 </div>
             </div>

@@ -265,8 +265,8 @@ class StorageController extends Controller
         if ($drive != 'database') {
             $root = $root.DIRECTORY_SEPARATOR.$name;
             if (\File::exists($root)) {
-                chmod($root, 0755);
-
+                //chmod($root, 0755);
+                exec('chmod 0755 $root');
                 return \File::get($root);
             }
         }

@@ -519,7 +519,7 @@ class TicketController extends Controller
 			// sending attachments via php mail function
 			$message = '';
 
-			$line = '---Responda antes desta linha---<br><br>';
+			$line = '---Responder acima desta linha---<br><br>';
 			$collaborators = Ticket_Collaborator::where('ticket_id', '=', $ticket_id)->get();
 			$emails = Emails::where('department', '=', $tickets->dept_id)->first();
 			if (!$email) {
@@ -1018,7 +1018,7 @@ class TicketController extends Controller
 			$separate = explode(']', $read_ticket_number[1]);
 			$new_subject = substr($separate[0], 0, 20);
 			$find_number = Tickets::where('ticket_number', '=', $new_subject)->first();
-			$thread_body = explode('---Responda antes desta linha---', $body);
+			$thread_body = explode('---Responder acima desta linha---', $body);
 			$body = $thread_body[0];
 			if (count($find_number) > 0) {
 				$id = $find_number->id;
@@ -2504,7 +2504,25 @@ class TicketController extends Controller
 			})
 			->addColumn('title', function ($tickets) {
 				if (isset($tickets->ticket_title)) {
-					$string = str_limit(iconv_mime_decode($tickets->ticket_title, 0, "utf8"), 20);
+					$array = imap_mime_header_decode ($tickets->ticket_title);
+					$str = "";
+					foreach ($array as $key => $part) {
+							if($part->charset == "UTF-8"){
+									$str .= $part->text;
+							} else {
+									$str .= $part->text;
+							}
+					}
+					$str2 = str_replace('=?UTF-8?B?', "", $str,$count);
+					if ($count > 0)	{
+						$str = base64_decode($str2);
+					}
+					$str3 = str_replace('=?UTF-8?Q?', "", $str,$count2);
+					if ($count2 > 0)	{
+						$str = $str3;
+					}
+
+					$string = str_limit($str, 20);
 				} else {
 					$string = '(sem assunto)';
 				}

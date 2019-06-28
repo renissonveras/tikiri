@@ -298,8 +298,13 @@ class GaUserBadgesController extends BaseGamificationController
 	public function storePoints($data)
 	{
 		try {
-			$gaUserBadges = new GaUserBadges;
-			$gaUserBadges->user_id = Auth::user()->id;
+			$gaUserBadges = new GaUserBadges;		
+			if (!empty($data["user_id"])) {
+				$usuarioAcao = $data["user_id"];
+			} else {
+				$usuarioAcao = Auth::user()->id;
+			}
+			$gaUserBadges->user_id = $usuarioAcao;
 			$gaUserBadges->badge_id = $data["badge_id"];
 			$badge = GaBadge::where([['id', $data["badge_id"]],['isactive', 1]])->first();
 			if (!empty($badge) & !empty($gaUserBadges->user_id)) {
@@ -336,7 +341,7 @@ class GaUserBadgesController extends BaseGamificationController
 				$gaUserBadges->save();
 				$notificationController = new Notify;
 				$user = User::where('id', '=', $data["user_id"])->get();
-				$notificationController->create($gaUserBadges->id, $data["user_id"], '4',$user);
+				$notificationController->create($gaUserBadges->id, $usuarioAcao, '4',$user);
 			}
 			return "1";
 		} catch (Exception $ex) {

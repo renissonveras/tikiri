@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        error_reporting(E_ALL ^ E_NOTICE);
         Queue::failing(function (JobFailed $event) {
             loging('Failed Job - '.$event->connectionName, json_encode($event->data));
             $failedid = $event->failedId;

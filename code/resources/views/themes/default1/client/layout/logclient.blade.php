@@ -1,3 +1,6 @@
+<?php 
+ $status = NULL;
+?>
 <!DOCTYPE html>
 <html>
     <head>

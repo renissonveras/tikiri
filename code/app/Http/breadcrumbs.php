@@ -431,6 +431,9 @@ Breadcrumbs::register('home', function ($breadcrumbs) {
 Breadcrumbs::register('/', function ($breadcrumbs) {
     $breadcrumbs->push(Lang::get('lang.home'), route('/'));
 });
+Breadcrumbs::register('filter', function ($breadcrumbs) {
+    $breadcrumbs->push(Lang::get('lang.home'), route('/'));
+});
 Breadcrumbs::register('form', function ($breadcrumbs) {
     $breadcrumbs->push('Criar Ticket', route('form'));
 });

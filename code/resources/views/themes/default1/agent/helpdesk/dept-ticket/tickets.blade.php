@@ -49,11 +49,12 @@ if (Auth::user()->role == 'agent') {
 } else {
     $dept_name = \Request::segments()[1];
 }
+
 ?>
 <!-- Main content -->
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">{!! $dept_name !!} / {!! $status !!} </h3>
+        <h3 class="box-title">{!! $dept_name !!} / <?php if (isset($status)) { echo $status; } ?>  </h3>
     </div><!-- /.box-header -->
 
     <div class="box-body ">
@@ -89,8 +90,9 @@ if (Auth::user()->role == 'agent') {
         <!--</div>-->
         <div class="mailbox-messages" id="refresh">
             <!--datatable-->
-            {!!$table->render('vendor.Chumper.template')!!}
-             
+            <?php if (isset($table)) { ?>
+                {!!$table->render('vendor.Chumper.template')!!}
+            <?php } ?>
             
             <!-- /.datatable -->
         </div><!-- /.mail-box-messages -->
@@ -216,7 +218,9 @@ if (Auth::user()->role == 'agent') {
         </div>
     </div>
 </div>
-{!! $table->script('vendor.Chumper.ticket-dept-javascript') !!}
+<?php if (isset($table)) { ?>
+    {!! $table->script('vendor.Chumper.ticket-dept-javascript') !!}
+<?php } ?>
 <script>
    
     var t_id = [];
