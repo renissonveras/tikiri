@@ -36,7 +36,8 @@ class Ticket_attachments extends Model
                 $value = base64_encode($content);
                 if (mime($this->type) != 'image') {
                     $root = $root.'/'.$name;
-                    chmod($root, 1204);
+                    //chmod($root, 1204);
+                    exec("chmod 1204 $root");
                 }
             }
         }
@@ -59,7 +60,7 @@ class Ticket_attachments extends Model
 
                 return '<li style="background-color:#f4f4f4;"><span class="mailbox-attachment-icon has-img">'.$var.'</span><div class="mailbox-attachment-info"><b style="word-wrap: break-word;">'.$this->name.'</b><br/><p>'.$value.'</p></div></li>';
             } else {
-                $var = '<a style="max-width:200px;height:133px;color:#666;" href="'.\URL::route('image', ['image_id' => $this->id]).'" target="_blank"><span class="mailbox-attachment-icon" style="background-color:#fff; font-size:18px;">'.strtoupper(str_limit($this->type, 15)).'</span><div class="mailbox-attachment-info"><span ><b style="word-wrap: break-word;">'.$this->name.'</b><br/><p>'.$value.'</p></span></div></a>';
+                $var = '<a style="max-width:200px;height:133px;color:#666;" href="'.\URL::route('pdf', ['image_id' => $this->id]).'" target="_blank"><span class="mailbox-attachment-icon" style="background-color:#fff; font-size:18px;">'.strtoupper(str_limit($this->type, 15)).'</span><div class="mailbox-attachment-info"><span ><b style="word-wrap: break-word;">'.$this->name.'</b><br/><p>'.$value.'</p></span></div></a>';
 
                 return '<li style="background-color:#f4f4f4;">'.$var.'</li>';
             }

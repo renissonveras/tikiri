@@ -232,7 +232,7 @@ class FilterController extends Controller
     public function table()
     {
         // if (Auth::user()->role == 'admin') {
-            $ticket = new Tickets();
+        $ticket = new Tickets();
         $tickets = $ticket
                     ->leftJoin('ticket_thread', function ($join) {
                         $join->on('tickets.id', '=', 'ticket_thread.ticket_id')
@@ -307,7 +307,7 @@ class FilterController extends Controller
 
         return $table->leftJoin('department as dep', 'tickets.dept_id', '=', 'dep.id')
                 ->leftJoin('ticket_status', 'tickets.status', '=', 'ticket_status.id')
-                ->where('dep.name', $dept)
+                ->where('dep.name', rawurldecode($dept))
                 ->where('ticket_status.name', $status);
     }
 

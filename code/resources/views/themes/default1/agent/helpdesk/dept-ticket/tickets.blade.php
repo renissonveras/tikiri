@@ -48,6 +48,7 @@ if (Auth::user()->role == 'agent') {
     $dept_name =  $dept->name;
 } else {
     $dept_name = \Request::segments()[1];
+    $dept_name = rawurldecode($dept_name);
 }
 
 ?>
@@ -82,7 +83,7 @@ if (Auth::user()->role == 'agent') {
 
         <input type="submit" class="submit btn btn-default text-orange btn-sm" id="delete" name="submit" value="{!! Lang::get('lang.delete') !!}">
         @if(Auth::user()->role == 'admin')
-        <input type="submit" class="submit btn btn-default text-yellow btn-sm" id="close" name="submit" value="{!! Lang::get('lang.close') !!}">
+            <input type="submit" class="submit btn btn-default text-yellow btn-sm" id="close" name="submit" value="{!! Lang::get('lang.close') !!}">
         @endif
         <button type="button" class="btn btn-sm btn-default text-green" id="Edit_Ticket" data-toggle="modal" data-target="#MergeTickets"><i class="fa fa-code-fork"> </i> {!! Lang::get('lang.merge') !!}</button>
         <button type="button" class="btn btn-sm btn-default" id="assign_Ticket" data-toggle="modal" data-target="#AssignTickets" style="display: none;"><i class="fa fa-hand-o-right"> </i> {!! Lang::get('lang.assign') !!}</button>

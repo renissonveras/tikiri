@@ -2024,6 +2024,7 @@ class TicketController extends Controller
 
 	public function deptTicket($dept, $status)
 	{
+		$dept = rawurldecode($dept);
 		if (\Auth::user()->role === 'agent') {
 			$dept2 = Department::where('id', '=', \Auth::user()->primary_dpt)->first();
 			if ($dept !== $dept2->name) {
@@ -2034,6 +2035,8 @@ class TicketController extends Controller
 				->addColumn(
 						'', Lang::get('lang.subject'), Lang::get('lang.ticket_id'), Lang::get('lang.priority'), Lang::get('lang.from'), Lang::get('lang.assigned_to'), Lang::get('lang.last_activity'), Lang::get('lang.created-at'))
 				->noScript();
+
+		//debug($table);
 
 		return view('themes.default1.agent.helpdesk.dept-ticket.tickets', compact('dept', 'status', 'table'));
 	}

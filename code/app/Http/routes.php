@@ -382,6 +382,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('agen', 'Agent\helpdesk\DashboardController@ChartData');
         Route::get('image/{id}', ['as' => 'image', 'uses' => 'Agent\helpdesk\MailController@get_data']); /* get image */
+        Route::get('pdf/{id}', ['as' => 'pdf', 'uses' => 'Agent\helpdesk\MailController@get_other_types']); /* get pdf */
         Route::get('thread/auto/{id}', 'Agent\helpdesk\TicketController@autosearch');
         Route::get('auto', 'Agent\helpdesk\TicketController@autosearch2');
         Route::patch('search-user', 'Agent\helpdesk\TicketController@usersearch');
