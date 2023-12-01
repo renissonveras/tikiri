@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" ng-app="myApp">
-        <title>Faveo | HELP DESK</title>
+        <title>Tikiri</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="_token" content="{!! csrf_token() !!}"/>
         <!-- faveo favicon -->
@@ -461,7 +461,7 @@
                 <div class="pull-right hidden-xs">
                     <b>{!! Lang::get('lang.version') !!}</b> {!! Config::get('app.version') !!}
                 </div>
-                <strong>{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>.</strong> {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="http://www.faveohelpdesk.com/" target="_blank">Faveo</a>
+                <strong>{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>.</strong> {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="https://github.com/renissonveras/tikiri" target="_blank">Tikiri</a>
             </footer>
         </div><!-- ./wrapper -->
 

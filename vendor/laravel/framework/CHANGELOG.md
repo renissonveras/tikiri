@@ -1,6 +1,100 @@
 # Release Notes for 9.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v9.51.0...9.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v9.52.10...9.x)
+
+## [v9.52.10](https://github.com/laravel/framework/compare/v9.52.9...v9.52.10) - 2023-06-27
+
+* Fix SES V2 Transport "reply to" addresses by @jacobmllr95 in https://github.com/laravel/framework/pull/47522
+* Fixes unable to use `trans()->has()` on JSON language files by @crynobone in https://github.com/laravel/framework/pull/47582
+
+## [v9.52.9](https://github.com/laravel/framework/compare/v9.52.8...v9.52.9) - 2023-06-08
+
+* Fixes usage of `Redis::many()` with empty array by @nunomaduro in https://github.com/laravel/framework/pull/47307
+* Fix PHPStan description of Closure returning a union type by @ondrejmirtes in https://github.com/laravel/framework/pull/47352
+
+## [v9.52.8](https://github.com/laravel/framework/compare/v9.52.7...v9.52.8) - 2023-05-30
+
+### Fixed
+- Fixed escaped String for JSON_CONTAINS ([#47244](https://github.com/laravel/framework/pull/47244))
+
+### Changed
+- Send along value to InvalidPayloadException ([#47223](https://github.com/laravel/framework/pull/47223))
+
+
+## [v9.52.7](https://github.com/laravel/framework/compare/v9.52.6...v9.52.7) - 2023-04-25
+
+### Changed
+- Make rules method in FormRequest optional ([#46846](https://github.com/laravel/framework/pull/46846))
+
+
+## [v9.52.6](https://github.com/laravel/framework/compare/v9.52.5...v9.52.6) - 2023-04-18
+
+### Fixed
+- Fixed Cache::spy incompatibility with Cache::get ([#46689](https://github.com/laravel/framework/pull/46689))
+
+### Changed
+- Remove unnecessary parameters in creatable() and destroyable() methods in  Illuminate/Routing/PendingSingletonResourceRegistration class ([#46677](https://github.com/laravel/framework/pull/46677))
+- Allow Event::assertListening to check for invokable event listeners ([#46683](https://github.com/laravel/framework/pull/46683))
+- Return non-zero exit code for uncaught exceptions ([#46541](https://github.com/laravel/framework/pull/46541))
+- Release lock for job implementing ShouldBeUnique that is dispatched afterResponse() ([#46806](https://github.com/laravel/framework/pull/46806))
+
+
+## [v9.52.5](https://github.com/laravel/framework/compare/v9.52.4...v9.52.5) - 2023-02-25
+
+### Fixed
+- Fixed `Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase::expectsDatabaseQueryCount()` $connection parameter ([#46228](https://github.com/laravel/framework/pull/46228))
+- PHP 8.0 fix for Closure jobs ([#46505](https://github.com/laravel/framework/pull/46505))
+- Fix preg_split error when there is a slash in the attribute ([#46549](https://github.com/laravel/framework/pull/46549))
+
+### Changed
+- Allow WithFaker to be used when app is not bound ([#46529](https://github.com/laravel/framework/pull/46529))
+
+
+## [v9.52.4](https://github.com/laravel/framework/compare/v9.52.3...v9.52.4) - 2023-02-22
+
+### Fixed
+- Fixes constructable migrations ([#46223](https://github.com/laravel/framework/pull/46223))
+
+
+## [v9.52.3](https://github.com/laravel/framework/compare/v9.52.2...v9.52.3) - 2023-02-22
+
+### Reverted
+- Revert changes from `Arr::random()` ([cf3eb90](https://github.com/laravel/framework/commit/cf3eb90a6473444bb7a78d1a3af1e9312a62020d))
+
+
+## [v9.52.2](https://github.com/laravel/framework/compare/v9.52.1...v9.52.2) - 2023-02-21
+
+### Fixed
+- Fixed `Illuminate/Collections/Arr::shuffle()` with empty array ([0c6cae0](https://github.com/laravel/framework/commit/0c6cae0ef647158b9554cad05ff39db7e7ad0d33))
+
+
+## [v9.52.1](https://github.com/laravel/framework/compare/v9.52.0...v9.52.1) - 2023-02-21
+
+### Changed
+- Use secure randomness in Arr:random and Arr:shuffle ([#46105](https://github.com/laravel/framework/pull/46105))
+
+
+## [v9.52.0](https://github.com/laravel/framework/compare/v9.51.0...v9.52.0) - 2023-02-14
+
+### Added
+- Added methods to Enumerable contract ([#46021](https://github.com/laravel/framework/pull/46021))
+- Added new mailer transport for AWS SES V2 API ([#45977](https://github.com/laravel/framework/pull/45977))
+- Add S3 temporaryUploadUrl method to AwsS3V3Adapter ([#45753](https://github.com/laravel/framework/pull/45753))
+- Add index hinting support to query builder ([#46063](https://github.com/laravel/framework/pull/46063))
+- Add mailer name to data for SentMessage and MessageSending events ([#46079](https://github.com/laravel/framework/pull/46079))
+- Added --pending option to migrate:status ([#46089](https://github.com/laravel/framework/pull/46089))
+
+### Fixed
+- Fixed pdo exception when rollbacking without active transaction ([#46017](https://github.com/laravel/framework/pull/46017))
+- Fix duplicated columns on select ([#46049](https://github.com/laravel/framework/pull/46049))
+- Fixes memory leak on anonymous migrations ([№46073](https://github.com/laravel/framework/pull/46073))
+- Fixed race condition in locks issued by the file cache driver ([#46011](https://github.com/laravel/framework/pull/46011))
+
+### Changed
+- Allow choosing tables to truncate in `Illuminate/Foundation/Testing/DatabaseTruncation::truncateTablesForConnection()` ([#46025](https://github.com/laravel/framework/pull/46025))
+- Update afterPromptingForMissingArguments method ([#46052](https://github.com/laravel/framework/pull/46052))
+- Accept closure in bus assertion helpers ([#46075](https://github.com/laravel/framework/pull/46075))
+- Avoid mutating the $expectedLitener between loops on Event::assertListening ([#46095](https://github.com/laravel/framework/pull/46095))
 
 
 ## [v9.51.0](https://github.com/laravel/framework/compare/v9.50.2...v9.51.0) - 2023-02-07

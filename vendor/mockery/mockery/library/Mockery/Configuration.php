@@ -1,21 +1,11 @@
 <?php
+
 /**
- * Mockery
+ * Mockery (https://docs.mockery.io/)
  *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://github.com/padraic/mockery/blob/master/LICENSE
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to padraic@php.net so we can send you a copy immediately.
- *
- * @category   Mockery
- * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
- * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
+ * @copyright https://github.com/mockery/mockery/blob/HEAD/COPYRIGHT.md
+ * @license   https://github.com/mockery/mockery/blob/HEAD/LICENSE BSD 3-Clause License
+ * @link      https://github.com/mockery/mockery for the canonical source repository
  */
 
 namespace Mockery;
@@ -253,15 +243,21 @@ class Configuration
      */
     public function setDefaultMatcher($class, $matcherClass)
     {
-        if (!is_a($matcherClass, \Mockery\Matcher\MatcherAbstract::class, true) &&
-            !is_a($matcherClass, \Hamcrest\Matcher::class, true) &&
-            !is_a($matcherClass, \Hamcrest_Matcher::class, true)
+        $isHamcrest = is_a($matcherClass, \Hamcrest\Matcher::class, true) || is_a($matcherClass, \Hamcrest_Matcher::class, true);
+        if (
+            !is_a($matcherClass, \Mockery\Matcher\MatcherAbstract::class, true) &&
+            !$isHamcrest
         ) {
             throw new \InvalidArgumentException(
-                "Matcher class must be either Hamcrest matcher or extend \Mockery\Matcher\MatcherAbstract, " .
-                  "'$matcherClass' given."
+                "Matcher class must extend \Mockery\Matcher\MatcherAbstract, " .
+                "'$matcherClass' given."
             );
         }
+
+        if ($isHamcrest) {
+            @trigger_error('Hamcrest package has been deprecated and will be removed in 2.0', E_USER_DEPRECATED);
+        }
+
         $this->_defaultMatchers[$class] = $matcherClass;
     }
 

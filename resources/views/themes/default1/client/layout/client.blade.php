@@ -121,12 +121,12 @@
                             <a href="{{url('/')}}" rel="home">
                                 @endif
                                 @if($company->use_logo == 1)
-                                <img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" alt="User Image" width="200px" height="200px"/>
+                                <img src="{{asset('uploads/company')}}{{'/'}}{{$company->logo}}" alt="Tikiri" width="200px" height="200px"/>
                                 @else
                                 @if($system->name)
                                 {!! $system->name !!}
                                 @else
-                                <b>SUPPORT</b> CENTER
+                                <b>SISTEMA</b> TIKIRI
                                 @endif
                                 @endif
                             </a>
@@ -458,7 +458,7 @@
                     <hr style="color:#E5E5E5"/>
                     <div class="row">
                         <div class="site-info col-md-6">
-                            <p class="text-muted">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>. {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="https://www.faveohelpdesk.com/"  target="_blank">Faveo</a></p>
+                            <p class="text-muted">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>. {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="https://github.com/renissonveras/tikiri/"  target="_blank">Tikiri</a></p>
                         </div>
                         <div class="site-social text-right col-md-6">
                             <?php $socials = App\Model\helpdesk\Theme\Widgets::all(); ?>

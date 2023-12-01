@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Faveo | HELP DESK</title>
+        <title>Tikiri</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <link href="{{asset("lb-faveo/downloads/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
         <div class="wrapper">
 
             <header class="main-header">
-                <a href="../../index2.html" class="logo"><b>Faveo </b>HELPDESK</a>
+                <a href="../../index2.html" class="logo"><b>Tikiri </b></a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -50,11 +50,11 @@
                     <div class="collapse navbar-collapse" id="navbar-collapse">
                         <ul class="tabs tabs-horizontal nav navbar-nav">
                             <li><a data-target="#tabA" href="#">Home</a></li>
-                            <li @yield('Staffs')><a data-target="#tabB" href="#">Staffs</a></li>
+                            <li @yield('Staffs')><a data-target="#tabB" href="#">Equipes</a></li>
                             <li @yield('Emails')><a data-target="#tabC" href="#">Emails</a></li>
-                            <li @yield('Manage')><a data-target="#tabD" href="#">Manage</a></li>
-                            <li @yield('Settings')><a data-target="#tabE" href="#">Settings</a></li>
-                            <li @yield('Themes')><a data-target="#tabF" href="#">Themes</a></li>
+                            <li @yield('Manage')><a data-target="#tabD" href="#">Gerenciar</a></li>
+                            <li @yield('Settings')><a data-target="#tabE" href="#">Configurações</a></li>
+                            <li @yield('Themes')><a data-target="#tabF" href="#">Temas</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">

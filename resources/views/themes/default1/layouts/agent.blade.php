@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Faveo | HELP DESK</title>
+        <title>Tikiri</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <link href="{{asset("lb-faveo/downloads/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
@@ -40,7 +40,7 @@
         <div class="wrapper">
 
             <header class="main-header">
-                <a href="" class="logo"><b>Faveo </b>HELPDESK</a>
+                <a href="" class="logo"><b>Tikiri </b></a>
 
                 <?php
 $company = App\Model\helpdesk\Settings\Company::where('id', '=', '1')->first();

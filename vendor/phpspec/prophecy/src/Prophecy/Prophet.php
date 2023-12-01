@@ -30,22 +30,18 @@ use Prophecy\Exception\Prediction\AggregateException;
  */
 class Prophet
 {
+    /**
+     * @var Doubler
+     */
     private $doubler;
     private $revealer;
     private $util;
 
     /**
-     * @var ObjectProphecy[]
+     * @var list<ObjectProphecy<object>>
      */
     private $prophecies = array();
 
-    /**
-     * Initializes Prophet.
-     *
-     * @param null|Doubler           $doubler
-     * @param null|RevealerInterface $revealer
-     * @param null|StringUtil        $util
-     */
     public function __construct(
         Doubler $doubler = null,
         RevealerInterface $revealer = null,
@@ -74,6 +70,10 @@ class Prophet
      * @param null|string $classOrInterface Class or interface name
      *
      * @return ObjectProphecy
+     *
+     * @template T of object
+     * @phpstan-param class-string<T>|null $classOrInterface
+     * @phpstan-return ObjectProphecy<T>
      */
     public function prophesize($classOrInterface = null)
     {
@@ -97,7 +97,7 @@ class Prophet
     /**
      * Returns all created object prophecies.
      *
-     * @return ObjectProphecy[]
+     * @return list<ObjectProphecy<object>>
      */
     public function getProphecies()
     {
@@ -116,6 +116,8 @@ class Prophet
 
     /**
      * Checks all predictions defined by prophecies of this Prophet.
+     *
+     * @return void
      *
      * @throws Exception\Prediction\AggregateException If any prediction fails
      */

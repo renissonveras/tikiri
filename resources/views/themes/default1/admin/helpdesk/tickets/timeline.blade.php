@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Faveo | HELP DESK</title>
+        <title>Tikiri</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
         <div class="wrapper">
 
             <header class="main-header">
-                <a href="../../index2.html" class="logo"><b>Faveo</b> HELP DESK</a>
+                <a href="../../index2.html" class="logo"><b>Tikiri</b></a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->

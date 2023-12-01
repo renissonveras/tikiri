@@ -5,7 +5,7 @@
     
         <meta charset="UTF-8" ng-app="myApp">
     
-        <title>Faveo | HELP DESK</title>
+        <title>Tikiri</title>
     
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     
@@ -370,8 +370,8 @@
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar elevation-4 sidebar-dark-black">
 
-                <a href="http://www.faveohelpdesk.com" class="brand-link " style="text-align: center;">
-                    <img src="{{ asset('lb-faveo/media/images/logo.png')}}" class="brand-image" alt="Company Log0">
+                <a href="{{ \Config::get('app.url') }}" class="brand-link " style="text-align: center;">
+                    <img src="{{ asset('lb-faveo/media/images/logo-tikiri-1-2.png')}}" class="brand-image" alt="Sistema Tikiri">
                 </a>
 
                 <div class="sidebar">
@@ -602,7 +602,7 @@
                       </div><!-- /.col -->
                       <div class="col-sm-6">
 
-                        {!! Breadcrumbs::render() !!}
+                        {{-- !! Breadcrumbs::render() !! --}}
                       </div><!-- /.col -->
                     </div><!-- /.row -->
                   </div><!-- /.container-fluid -->
@@ -650,7 +650,7 @@
                     <span style="font-weight: 500">{!! Lang::get('lang.version') !!}</span> {!! Config::get('app.version') !!}
                 </div>
 
-                <span style="font-weight: 500">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>.</span> {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="http://www.faveohelpdesk.com/" target="_blank">Faveo</a>
+                <span style="font-weight: 500">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>.</span> {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="https://github.com/renissonveras/tikiri" target="_blank">Tikiri</a>
             </footer>
         </div><!-- ./wrapper -->
         <script src="{{asset("lb-faveo/adminlte3/js/adminlte3.2.0.min.js")}}" type="text/javascript"></script>

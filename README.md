@@ -1,44 +1,22 @@
-```
+Tikiri 
+========
+<br><img src="https://img.shields.io/badge/License-OSL-blue.svg">&nbsp;</br>
 
-                 ______                      _    _      _           _           _    
-                |  ____|                    | |  | |    | |         | |         | |   
-                | |__ __ ___   _____  ___   | |__| | ___| |_ __   __| | ___  ___| | __
-                |  __/ _` \ \ / / _ \/ _ \  |  __  |/ _ \ | '_ \ / _` |/ _ \/ __| |/ /
-                | | | (_| |\ V /  __/ (_) | | |  | |  __/ | |_) | (_| |  __/\__ \   < 
-                |_|  \__,_| \_/ \___|\___/  |_|  |_|\___|_| .__/ \__,_|\___||___/_|\_\
-                                                          | |                         
-                                                          |_|                         
-             
-```
-<br><img src="https://travis-ci.org/ladybirdweb/faveo-helpdesk.svg?branch=master">&nbsp;<img src="https://img.shields.io/badge/License-OSL-blue.svg">&nbsp;<a href="https://gitter.im/ladybirdweb/faveo-helpdesk" target="_blank"><img src="https://badges.gitter.im/ladybirdweb/faveo-helpdesk.svg"></a>&nbsp;<a href="https://styleci.io/repos/34716238"><img src="https://styleci.io/repos/34716238/shield" alt="StyleCI" height="19px"></a>&nbsp;<a href="http://squizlabs.github.io/PHP_CodeSniffer/analysis/ladybirdweb/faveo-helpdesk/index.html" target="_blank"><img src="http://squizlabs.github.io/PHP_CodeSniffer/analysis/ladybirdweb/faveo-helpdesk/grade.svg" height="20px"></a>&nbsp;<a href="https://scrutinizer-ci.com/g/ladybirdweb/faveo-helpdesk/?branch=master" target="_blank"><img src="https://scrutinizer-ci.com/g/mverma16/faveo-helpdesk/badges/quality-score.png?b=master" height="20px"></a></br>
+O Tikiri é um sistema Open-Source de gestão de Help Desk e Service Desk que permite que seu negócio estreite o relacionamento com seus clientes, resolvendo dúvidas e questões a respeito do produto e/ou serviço. Organize os chamados de suporte, atendimento online e gestão de serviços de TI em um só sistema.
+Em cada recurso, seja de software, treinamento ou material de suporte, buscamos inserir o objetivo principal do produto: aprimorar as relações interpessoais entre cliente-atendentes e atendentes-atendentes para elevar ao máximo o grau de satisfação em ambientes de suporte técnico.
 
-Faveo Helpdesk provides Businesses with an automated Helpdesk system to manage customer support. 
-
-The word Faveo comes from Latin which means to be favourable. Which truly highlights vision and the scope as well as the functionality of the product that Faveo is. In today’s competitive startup scenario customer retention is one of the major challenges. Handling client query diligently is all the difference between retaining or losing a long lasting relationship. The company is driven with passion of providing tools for managing consumer queries for strategic insights and helping companies take those decisive decisions.
-
-Faveo has been integrated with multiple platforms and new features being added each month.
-
-Faveo can be customised according to requirement and we do undertake such request. 
-
-Flavors of Faveo
+Baseado no Faveo HelpDesk
 --------------------------
-  * Faveo Help Desk Community Edition – Free, Open source edition
-  * Faveo Help Desk Freelancer - Free version with features available in Faveo Enterprise Edition for two agents
-  * Faveo Help Desk Enterprise Edition – Paid version with many advance features and integrations
-  * Faveo Service Desk - Paid version for IT Assest management
-  
-[View complete comparision list of all flavors of Faveo to select the most suitable solution for your business](https://www.faveohelpdesk.com/pricing/)
+O Tikiri é um "fork" do projeto <a href="https://github.com/ladybirdweb/faveo-helpdesk" target="_blank">Faveo Helpdesk Community</a>, e seguimos a mesma filosofia de software livre e de código aberto. Mais informações você também pode encontrar no site <a href="https://www.faveohelpdesk.com/" target="_blank">faveohelpdesk.com</a>.
 
-Faveo Documentation
+O nome Tikiri
 --------------------------
-  * <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki" target="_blank">Faveo user Manual</a>
-  * <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki/API-Documentation" target="_blank">Faveo API Documentation</a>
-  * <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki/Faveo-Event-List" target="_blank">Faveo Event List</a>
-  * <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki/Faveo-Plugin-creation-guide" target="_blank">Faveo Plugin creation guide</a>
+Tikiri, neste caso, faz alusão ao Tiquiri, como é chamado em Roraima e alguns outros estados do Norte do Brasil essa espécie de lagartixa doméstica tropical. O Tiquiri não é venenoso, alimenta-se de insetos, é silencioso e observador. Pode chegar a medir cerca de 17 centímetros, e possui uma capacidade de nadar e escalar muito bem desenvolvida. No nosso caso, escrevemos com “K”, em referência aos Tickets, que é como chamamos as mensagens enviadas ao sistema de gestão de suporte técnico.
 
-Requirements
+
+Requisitos
 --------------------------
-To run Faveo your host just needs a couple of things:
+To rodar o Tikiri você precisa dos seguintes recursos:
 
   * PHP Version: 8.1+
   * Database: MySQL 8.0.x or MariaDB 10.6.x
@@ -46,86 +24,80 @@ To run Faveo your host just needs a couple of things:
   * PHP Extensions: Imap, Mbstring, Mcrypt, OpenSSL, PDO, Tokenizer, XML, Zip
   * Web Server Extension: Pretty URLs or Search Engine Friendly URLs have to be enabled in your web server configuration
 
-Faveo Web Hosting
---------------------------
-<a href="http://www.store.ladybirdwebhost.com/" target="_blank">Ladybird Web Host</a> Offers hosting with minimum requirement to host Faveo web application. Faveo has been tested on Ladybird Web Host servers &amp; works very well in their server environment. All web hosting packages offered by Ladybird Web Host come with 30 day money back gurantee.</p>
 
-Credits
+Créditos
 --------------------------
   * Laravel Framework
   * Admin LTE Theme
+  * Faveo Helpdesk Community
 
 Website
 --------------------------
-Visit our website for more information on services offered by us <a href="http://www.faveohelpdesk.com/" target="_blank">www.faveohelpdesk.com</a>
+Visite nosso site para mais informações <a href="https://tikiri.com.br" target="_blank">www.tikiri.com.br</a>
 
-YouTube Channel
+Instalar
 --------------------------
-Find demo, installation, configuration, tutorial videos on our channel <a href="https://www.youtube.com/channel/UC-eqh-h241b1janp6sU7Iiw" target="_blank">here</a>
 
-Road Map for Community Edition
---------------------------
-See what all features are going to be part of upcoming releases <a href="http://www.faveohelpdesk.com/faveo-helpdesk-road-map" target="_blank">here</a>
+<p>Siga os passos a seguir para efetuar a instala&ccedil;&atilde;o do sistema:</p>
 
-Faveo Probe
---------------------------
-Helps verify whether your server can run Faveo or not. 
-<a href="https://github.com/ladybirdweb/faveo-probe" target="_blank">Download here</a>
+<p>1. Fa&ccedil;a do download do c&oacute;digo fonte.</p>
 
-Faveo Community
---------------------------
-Join Faveo discussion group and stay tuned to latest updates.<br/>
-<li><a href="https://www.linkedin.com/groups/8429668" target="_blank">Join us on LinkedIn</a></li>
-<li><a href="https://join.slack.com/t/faveocommunity/shared_invite/enQtNDU0NTcxNTA0ODIwLTAzN2VkNDhjMDFmNGJmNmUwYTkxYzE4OGI3ZDUyZGQ2ZDY5NjU2YmY4ZjU3YWNlNTA3N2JkOTk1ZmNiM2ZlY2U" target="_blank">Join us on Slack</a></li>
+<hr />
+<p>2. Verifique os requisitos m&iacute;nimos e fa&ccedil;a o upload do c&oacute;digo para o seu servidor web:</p>
 
-Support the community edition
---------------------------
-If you are using our product and want to support us <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki/Support-the-community-edition" target="_blank">Click here</a>
+<ul>
+  <li>Requisitos m&iacute;nimos:
+  <ul>
+    <li>PHP Vers&atilde;o: 5.6</li>
+    <li>Banco de Dados: MySQL 5.0+</li>
+    <li>Servidor Web: Apache / IIS / Nginx</li>
+    <li>Extens&otilde;es PHP: Imap, Mbstring, Mcrypt, OpenSSL, PDO, Tokenizer, XML, Zip</li>
+    <li>Extens&otilde;es do Servidor Web: Mod_rewrite, Pretty URLs ou Search Engine Friendly URLs tem que estar habilitado no servidor web.</li>
+  </ul>
+  </li>
+</ul>
 
-Language translate
---------------------------
-Help us translate Faveo into your native language <a href="https://github.com/ladybirdweb/faveo-helpdesk/wiki/Help-in-language-translate" target="_blank">Click here</a><br/>
-We are following Laravel <a href="https://laravel.com/docs/9.x/localization">localization</a> module, you can create language file in your branch and send a pull request.
+<ul>
+  <li>Copie o c&oacute;digo de sistema para o &quot;Document Root&quot; do seu servidor web.</li>
+</ul>
 
-Contributing
---------------------------
-Create your own fork of Faveo master repositoray and use <a href="https://github.com/nvie/gitflow">git-flow</a> to create a new feature. Once the feature is published in your fork, send a pull request to begin the conversation of integrating your new feature into Faveo. Please see the <a href="https://github.com/ladybirdweb/faveo-helpdesk/blob/master/CONTRIBUTING.md">contributing guidelines</a> before sending pull requests.
+<blockquote>
+<p>O&nbsp;&quot;Document Root&quot; varia de acordo com o servidor web que voc&ecirc; est&aacute; utilizando (Apache, Nginx, IIS), ou mesmo da distribui&ccedil;&atilde;o linux que voc&ecirc; utiliza. Cada empresa de hospedagem de sites tamb&eacute;m varia a localiza&ccedil;&atilde;o da pasta raiz. Se voc&ecirc; tem d&uacute;vidas quanto a isso pe&ccedil;a ajuda a um especialista ou <a href="https://tikiri.com.br/contato/">solicite nosso suporte t&eacute;cnico</a>.</p>
+</blockquote>
 
-Error Reporting
---------------------------
-Faveo uses [Bugsnag](https://www.bugsnag.com/) to monitor application stability in production enviroment. It helps us to provide bug fixes and feature updates after analyzing the logs and crash reports for the application. **If you are customizing the application under development environment, we request you to disable this error reporting.** It will allow us to ignore the errors occurred during your development cycle and we can focus more on the exceptions/bugs occuring in live system of other users of Faveo community. It can be easily disabled from "Error logs and debugging" option in admin panel or by updating your app environment to development in `.env`.
+<p>&nbsp;</p>
 
-You can still report the issues on our [Github Issue page](https://github.com/ladybirdweb/faveo-helpdesk/issues) by providing proper information about the changes you are trying to implement. We assure you that Faveo community will help you and your customization can be a part of Faveo application if it follows our contributing guidelines.
+<hr />
+<p>3. Defina nas permiss&otilde;es de diret&oacute;rio:</p>
 
-# Security Policy
+<p>Os subdiretorios code/storage e code/bootstrap/cache precisam ter permis&atilde;o de escrita pelo seu servidor web. Exemplo de comando para conceder permiss&atilde;o de escrita em servidores Apache:</p>
 
-## Supported Versions
+<ul>
+  <li>chgrp -R www-data storage bootstrap/cache</li>
+  <li>chmod -R ug+rwx storage bootstrap/cache</li>
+</ul>
 
-Check mark versions are supported with security patches.
+<hr />
+<p>4. Prepare o banco de dados:</p>
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 2.0.3   | :x: |
-| 2.0.2   | :white_check_mark: |
-| 2.0.1   | :white_check_mark: |
-| 2.0.0   | :x: |
-| < 1.0   | :x:                |
+<ul>
+  <li>No MySQL, crie um banco de dados e um usu&aacute;rio com permiss&atilde;o leitura e&nbsp;escrita de dados e cria&ccedil;&atilde;o de objetos. Anote o nome do banco de dados, usu&aacute;rio, senha, porta do servidor de bd (o padr&atilde;o &eacute; 3306)</li>
+  <li>Importe o banco de dados:
+    <ul>
+      <li>Importe o arquivo&nbsp;tikiri_install.sql que est&aacute; dentro do diret&oacute;rio DB para o seu banco de dados MySQL.</li>
+    </ul>
+  </li>
+  <li>Altere a string de conex&atilde;o:
+    <ul>
+      <li>V&aacute; para a pasta raiz e procure o arquivo example.env. Renomeie example.env para .env na pasta raiz. Atualize os detalhes da conex&atilde;o do banco de dados que voc&ecirc; criou.</li>
+    </ul>
+  </li>  
+</ul>
 
-## Supported Updates
+<p>Pronto, instala&ccedil;&atilde;o efetuada.</p>
 
-Security updates will be released once in a month. If it's high priority, we will make it twice a month
+<p>Nome de usu&aacute;rio e Senha padr&atilde;o para acessar o Tikiri ser&aacute;</p>
 
-## Reporting a Vulnerability
+<p>Nome de usu&aacute;rio: admin<br />
+Senha: tikiri</p>
 
-Please report (suspected) security vulnerabilities to support@faveohelpdesk.com. You will receive a response from us within 48 hours. If the issue is confirmed, we will release a patch as soon as possible depending on complexity but historically within a few days.
-
-
-Help
---------------------------
-Visit the <a href="https://github.com/ladybirdweb/faveo-helpdesk/issues">issue</a> page. And if you'd like professional help commercial support is available, email us through the <a href="http://www.faveohelpdesk.com/contact-us/">contact form</a>.
-
-
-
-Follow Us
---------------------------
-<a href="https://www.facebook.com/faveohelpdesk" ><img src="http://www.faveohelpdesk.com/wp-content/uploads/2016/12/fb.png" /></a> <a href="https://twitter.com/faveohelpdesk" ><img src="http://www.faveohelpdesk.com/wp-content/uploads/2016/12/twitter.png" /></a> <a href="https://www.linkedin.com/showcase/faveohelpdesk/" ><img src="http://www.faveohelpdesk.com/wp-content/uploads/2016/12/linkedin.png" /></a> <a href="https://www.youtube.com/channel/UC-eqh-h241b1janp6sU7Iiw" ><img src="http://www.faveohelpdesk.com/wp-content/uploads/2016/12/youtube.png" /></a> 

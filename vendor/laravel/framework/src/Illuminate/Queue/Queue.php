@@ -102,11 +102,11 @@ abstract class Queue
             $job = CallQueuedClosure::create($job);
         }
 
-        $payload = json_encode($this->createPayloadArray($job, $queue, $data), \JSON_UNESCAPED_UNICODE);
+        $payload = json_encode($value = $this->createPayloadArray($job, $queue, $data), \JSON_UNESCAPED_UNICODE);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new InvalidPayloadException(
-                'Unable to JSON encode payload. Error code: '.json_last_error()
+                'Unable to JSON encode payload. Error code: '.json_last_error(), $value
             );
         }
 
@@ -325,7 +325,7 @@ abstract class Queue
      */
     protected function shouldDispatchAfterCommit($job)
     {
-        if (is_object($job) && isset($job->afterCommit)) {
+        if (! $job instanceof Closure && is_object($job) && isset($job->afterCommit)) {
             return $job->afterCommit;
         }
 

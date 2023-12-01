@@ -6,6 +6,7 @@ use Aws\Api\DocModel;
 use Aws\Api\Service;
 use Aws\EndpointDiscovery\EndpointDiscoveryMiddleware;
 use Aws\EndpointV2\EndpointProviderV2;
+use Aws\Exception\AwsException;
 use Aws\Signature\SignatureProvider;
 use GuzzleHttp\Psr7\Uri;
 
@@ -235,10 +236,15 @@ class AwsClient implements AwsClientInterface
         $this->addInvocationId();
         $this->addEndpointParameterMiddleware($args);
         $this->addEndpointDiscoveryMiddleware($config, $args);
+        $this->addRequestCompressionMiddleware($config);
         $this->loadAliases();
         $this->addStreamRequestPayload();
         $this->addRecursionDetection();
         $this->addRequestBuilder();
+
+        if (!is_null($this->api->getMetadata('awsQueryCompatible'))) {
+            $this->addQueryCompatibleInputMiddleware($this->api);
+        }
 
         if (isset($args['with_resolved'])) {
             $args['with_resolved']($config);
@@ -354,7 +360,7 @@ class AwsClient implements AwsClientInterface
         $klass = get_class($this);
 
         if ($klass === __CLASS__) {
-            return ['', 'Aws\Exception\AwsException'];
+            return ['', AwsException::class];
         }
 
         $service = substr($klass, strrpos($klass, '\\') + 1, -6);
@@ -439,9 +445,33 @@ class AwsClient implements AwsClientInterface
             return SignatureProvider::resolve($provider, $version, $name, $region);
         };
         $this->handlerList->appendSign(
-            Middleware::signer($this->credentialProvider, $resolver, $this->tokenProvider),
+            Middleware::signer($this->credentialProvider,
+                $resolver,
+                $this->tokenProvider,
+                $this->getConfig()
+            ),
             'signer'
         );
+    }
+
+    private function addRequestCompressionMiddleware($config)
+    {
+        if (empty($config['disable_request_compression'])) {
+            $list = $this->getHandlerList();
+            $list->appendBuild(
+                RequestCompressionMiddleware::wrap($config),
+                'request-compression'
+            );
+        }
+    }
+
+    private function addQueryCompatibleInputMiddleware(Service $api)
+    {
+            $list = $this->getHandlerList();
+            $list->appendValidate(
+                QueryCompatibleInputMiddleware::wrap($api),
+                'query-compatible-input'
+            );
     }
 
     private function addInvocationId()
@@ -587,6 +617,25 @@ class AwsClient implements AwsClientInterface
     {
         return $this->endpointProvider instanceof EndpointProviderV2;
     }
+
+    public static function emitDeprecationWarning() {
+        $phpVersion = PHP_VERSION_ID;
+        if ($phpVersion <  70205) {
+            $phpVersionString = phpversion();
+            @trigger_error(
+                "This installation of the SDK is using PHP version"
+                .  " {$phpVersionString}, which will be deprecated on August"
+                .  " 15th, 2023.  Please upgrade your PHP version to a minimum of"
+                .  " 7.2.5 before then to continue receiving updates to the AWS"
+                .  " SDK for PHP.  To disable this warning, set"
+                .  " suppress_php_deprecation_warning to true on the client constructor"
+                .  " or set the environment variable AWS_SUPPRESS_PHP_DEPRECATION_WARNING"
+                .  " to true.",
+                E_USER_DEPRECATED
+            );
+        }
+    }
+
 
     /**
      * Returns a service model and doc model with any necessary changes

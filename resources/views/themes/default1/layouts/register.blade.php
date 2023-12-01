@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Faveo | HELP DESK</title>
+    <title>Tikiri</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Faveo</b> HELP DESK</a>
+        <a href="../../index2.html"><b>Tikri</b> HELP DESK</a>
       </div><!-- /.login-logo -->
 
        @yield('body')

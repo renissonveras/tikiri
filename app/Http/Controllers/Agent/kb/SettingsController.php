@@ -210,7 +210,7 @@ class SettingsController extends Controller
     {
         // $set = Settings::whereId(1)->first();
         // $lang = $set->language;
-        Config::set('app.locale', 'en');
+        Config::set('app.locale', 'pt-br');
         Config::get('app');
     }
 }
