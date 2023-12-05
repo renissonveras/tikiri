@@ -8,7 +8,7 @@ Homestead.json
 /nbproject/*
 /node_modules
 /public/error_log
-/public/lb-faveo/media/
+#/public/lb-faveo/media/
 /public/uploads
 /public/photos/
 /app/FaveoJob
