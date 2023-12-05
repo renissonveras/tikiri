@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>SUPPORT CENTER</title>
+    <title>Sistema Tikiri</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     
     <link rel="shortcut icon" href="{{asset("lb-faveo/media/images/favicon.ico")}}">
@@ -70,7 +70,7 @@
               @if($system->name)
                 <h1>{!! $system->name !!}</h1>
               @else
-                <h1><b>SUPPORT</b> CENTER</h1>
+                <h1>SISTEMA <b>TIKIRI</b></h1>
               @endif
             @endif
           </a>

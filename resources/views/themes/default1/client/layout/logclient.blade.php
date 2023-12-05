@@ -7,7 +7,7 @@
     if (isset($title->name)) {
         $title_name = $title->name;
     } else {
-        $title_name = "SUPPORT CENTER";
+        $title_name = "Sistema Tikiri";
     }
     ?>
     <title> @yield('title') {!! strip_tags($title_name) !!} </title>
@@ -112,7 +112,7 @@
                                         @if($system->name)
                                             {!! $system->name !!}
                                         @else
-                                            <b>SUPPORT</b> CENTER
+                                            SISTEMA <b>TIKIRI</b>
                                         @endif
                                     @endif
                                 </a>

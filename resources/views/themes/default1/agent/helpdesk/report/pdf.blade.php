@@ -31,7 +31,7 @@
                                 @if($system->name)
                                 {!! $system->name !!}
                                 @else
-                                <b>SUPPORT</b> CENTER
+                                SISTEMA <b>TIKIRI</b>
                                 @endif
                                 @endif
                             </a>
