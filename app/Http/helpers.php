@@ -130,7 +130,7 @@ function isInstall()
         $check = true;
     }
 
-    return $check;
+    return true;
 }
 
 function faveotime($date, $hour = 0, $min = 0, $sec = 0)
