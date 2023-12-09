@@ -36,7 +36,7 @@
     @if(Session::has('message'))
     <div class="alert alert-success alert-dismissable">
         <i class="fa  fa-check-circle"></i>
-        <b>Success!</b>
+        <b>Successo!</b>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         {!! Session::get('message') !!}
     </div>

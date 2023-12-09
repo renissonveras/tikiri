@@ -1,4 +1,4 @@
-<li class="nav-item dropdown notifications-menu">
+<!--li class="nav-item dropdown notifications-menu">
 
     <a href="#" class="nav-link" data-toggle="dropdown">
 
@@ -24,5 +24,5 @@
             @endif
         </ul>
     </div>
-</li>
+</li-->
 

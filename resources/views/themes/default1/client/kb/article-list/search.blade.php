@@ -42,7 +42,7 @@
                             <a class="readmore-link" href="{{url('show/'.$arti->slug)}}">Read more</a>
                         </blockquote>
                         <div class="post-meta clearfix">
-                            <span class="date"><i class="fa fa-clock-o fa-fw"></i> {{$arti->created_at->format('l, d-m-Y')}}</span>
+                            <span class="date"><i class="fa fa-clock-o fa-fw"></i> {{$arti->created_at->format('d/m/Y')}}</span>
                         </div><!-- end of post meta -->
                         <hr>
                     </article>

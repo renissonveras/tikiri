@@ -89,7 +89,7 @@
                 <div align="center">
                     
                     <h4 style="background-color: #0084b4;">
-                        <a href="#" class="logo"><img src="{{ asset('lb-faveo/media/images/logo-tikiri-1-2.png')}}" width="100px;" ></a>
+                        <a href="#" class="logo"><img src="{{ asset('lb-faveo/media/images/logo-tikiri-1-2-expand.png')}}" width="100px;" ></a>
                     </h4>    
                 </div>
                

@@ -130,9 +130,9 @@ class WorkflowController extends Controller
                         })
                         /* add column action */
                         ->addColumn('Actions', function ($model) {
-                            $confirmation = 'Are you sure?';
+                            $confirmation = 'Tem certeza?';
 
-                            return "<a class='btn btn-primary btn-xs' href='".route('workflow.edit', $model->id)."'><i class='fas fa-edit'></i> Edit</a>  <a class='btn btn-danger btn-xs' href='".route('workflow.delete', $model->id)."'><i class='fas fa-trash'></i> Delete</a>";
+                            return "<a class='btn btn-primary btn-xs' href='".route('workflow.edit', $model->id)."'><i class='fas fa-edit'></i> Editar</a>  <a class='btn btn-danger btn-xs' href='".route('workflow.delete', $model->id)."'><i class='fas fa-trash'></i> Excluir</a>";
                         })
                         ->make();
     }
@@ -328,7 +328,7 @@ class WorkflowController extends Controller
      */
     public function rejectTicket($id)
     {
-        $var = '<input type="hidden" name="action['.$id.'][b]" class="form-control" value="reject"><span text-red>Reject</span> ';
+        $var = '<input type="hidden" name="action['.$id.'][b]" class="form-control" value="reject"><span text-red>Rejeitar</span> ';
 
         return $var;
     }

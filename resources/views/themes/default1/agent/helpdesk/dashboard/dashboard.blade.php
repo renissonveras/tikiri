@@ -214,17 +214,17 @@ class="nav-item d-none d-sm-inline-block active"
 
 					<div class="col-md-4">
 						<span id="legend-holder" style="background-color: #6C96DF;"></span>&nbsp; 
-						<span class="lead"> <span id="total-created-tickets" ></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.created') !!}</span>
+						<span class="lead"> <span id="total-created-tickets" ></span> Criados</span>
 					</div> 
 					
 					<div class="col-md-4">
 						<span id="legend-holder" style="background-color: #6DC5B2;"></span>&nbsp; 
-						<span class="lead"> <span id="total-reopen-tickets" class="lead"></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.reopen') !!}</span>
+						<span class="lead"> <span id="total-reopen-tickets" class="lead"></span> Reabertos</span>
 					</div> 
 
 					<div class="col-md-4">
 						<span id="legend-holder" style="background-color: #E3B870;"></span>&nbsp; 
-						<span class="lead"> <span id="total-closed-tickets" class="lead"></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.closed') !!}</span>
+						<span class="lead"> <span id="total-closed-tickets" class="lead"></span> Fechados</span>
 					</div> 
 				</div>
 			</div>

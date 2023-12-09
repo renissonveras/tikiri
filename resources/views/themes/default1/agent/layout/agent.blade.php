@@ -185,7 +185,6 @@
                     </li>
                     @endif
 
-                    @include('themes.default1.update.notification')
 
                     <li class="nav-item dropdown notifications-menu" id="myDropdown">
 
@@ -202,16 +201,16 @@
 
                                 <button id="dismiss11" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                 
-                                <h4><i class="icon fas fa-check"></i>Alert!</h4>
+                                <h4><i class="icon fas fa-check"></i>Alerta!</h4>
 
                                 <div id="message-success1"></div>
                             </div>
 
                             <ul class="products-list product-list-in-card pl-2 pr-2" style="height: 350px;overflow-y: scroll;">
 
-                                 <li class="dropdown-header">You have {!! $notifications->count() !!} notifications. 
+                                 <li class="dropdown-header">Você tem {!! $notifications->count() !!} notificações. 
 
-                                    <a class="float-right" id="read-all" href="#">Mark all as read.</a>
+                                    <a class="float-right" id="read-all" href="#">Marcar todas como lidas.</a>
                                 </li>
 
                                 @if($notifications->count())
@@ -473,7 +472,7 @@
                                 
                                 <a href="#" @if($dept2 === $name) @yield('ticket-bar') @endif class="nav-link">
                                     <i class="nav-icon fas fa-folder-open"></i>
-                                    <p>{!!trans('lang.'.strtolower($name))!!}<i class="right fas fa-angle-left"></i></p>
+                                    <p>{!! strtolower($name) !!}<i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 
                                 @foreach($statuses as $status)
@@ -484,7 +483,7 @@
                                     <li class="nav-item">
                                         <a href="{!! url('tickets?departments='.$name.'&status='.$dept->get($status)->status) !!}" @if($status2 == $dept->get($status)->status && $dept2 === $name) @yield('inbox') @endif class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>{!!trans('lang.'.strtolower($dept->get($status)->status)) !!}</p>
+                                            <p>{!! strtolower($dept->get($status)->status) !!}</p>
                                             <small class="right badge badge-success">{{$dept->get($status)->count}}</small>
                                         </a>
                                     </li>

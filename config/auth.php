@@ -64,7 +64,10 @@ return [
             'driver' => 'eloquent',
             'model'  => App\User::class,
         ],
-
+        'ldap' => [
+            'driver' => 'adldap',
+            'model' => App\User::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

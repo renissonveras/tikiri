@@ -113,12 +113,12 @@
                                     $assign       = App\User::where('role', '!=', 'user')->select('id', 'first_name', 'last_name')->where('active', '=', 1)->where('is_delete', '!=', 1)->where('ban', '!=', 1)->orderBy('first_name')->get();
                                     $count_assign = count($assign);
                                     ?>
-                                    <optgroup label="Teams ( {!! $count_teams !!} )">
+                                    <optgroup label="Equipes ( {!! $count_teams !!} )">
                                         @foreach($teams as $team)
                                         <option  value="team_{{$team->id}}">{!! $team->name !!}</option>
                                         @endforeach
                                     </optgroup>
-                                    <optgroup label="Agents ( {!! $count_assign !!} )">
+                                    <optgroup label="Atendentes ( {!! $count_assign !!} )">
                                         @foreach($assign as $user)
                                         <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name}}</option>
                                         @endforeach

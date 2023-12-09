@@ -1385,7 +1385,7 @@ class TicketController extends Controller
                 $thread->ticket_id = $ticket->id;
                 $thread->user_id = Auth::user()->id;
                 $thread->is_internal = 1;
-                $thread->body = 'This Ticket has been assigned to '.$assignee;
+                $thread->body = 'Este ticket foi atribuído para '.$assignee;
                 $thread->save();
             } elseif ($assign_to[0] == 'user') {
                 $ticket->assigned_to = $assign_to[1];
@@ -1407,7 +1407,7 @@ class TicketController extends Controller
                 $thread->ticket_id = $ticket->id;
                 $thread->user_id = Auth::user()->id;
                 $thread->is_internal = 1;
-                $thread->body = 'This Ticket has been assigned to '.$assignee;
+                $thread->body = 'Este ticket foi atribuído para '.$assignee;
                 $thread->save();
 
                 $agent = $user_detail->first_name;
@@ -1465,7 +1465,7 @@ class TicketController extends Controller
     public function surrender($id)
     {
         $ticket = Tickets::where('id', '=', $id)->first();
-        $InternalContent = Auth::user()->first_name.' '.Auth::user()->last_name.' has Surrendered the assigned Ticket';
+        $InternalContent = Auth::user()->first_name.' '.Auth::user()->last_name.' devolveu o ticket atribuído';
         $thread = Ticket_Thread::where('ticket_id', '=', $id)->first();
         $NewThread = new Ticket_Thread();
         $NewThread->ticket_id = $thread->ticket_id;
@@ -1578,7 +1578,7 @@ class TicketController extends Controller
     {
         $company = Company::Where('id', '=', '1')->first();
         if ($company->company_name == null) {
-            $company = 'Support Center';
+            $company = 'Sistema Tikiri';
         } else {
             $company = $company->company_name;
         }
@@ -1595,7 +1595,7 @@ class TicketController extends Controller
     {
         $system = System::Where('id', '=', '1')->first();
         if ($system->name == null) {
-            $system = 'Support Center';
+            $system = 'Sistema Tikiri';
         } else {
             $system = $system->name;
         }
@@ -1676,7 +1676,7 @@ class TicketController extends Controller
             $ticket_collaborator->role = 'ccc';
             $ticket_collaborator->save();
 
-            return '<div id="alert11" class="alert alert-dismissable" style="color:#60B23C;background-color:#F2F2F2;"><button id="dismiss11" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-check"></i>Success!</h4><h4><i class="icon fa fa-user"></i>'.$data->user_name.'</h4><div id="message-success1">'.$data->email.'</div></div>';
+            return '<div id="alert11" class="alert alert-dismissable" style="color:#60B23C;background-color:#F2F2F2;"><button id="dismiss11" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-check"></i>Successo!</h4><h4><i class="icon fa fa-user"></i>'.$data->user_name.'</h4><div id="message-success1">'.$data->email.'</div></div>';
         } else {
             return '<div id="alert11" class="alert alert-warning alert-dismissable"><button id="dismiss11" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i>'.$data->user_name.'</h4><div id="message-success1">'.$data->email.'<br/>This user already Collaborated</div></div>';
         }
@@ -1997,7 +1997,7 @@ class TicketController extends Controller
             }
         }
 
-        return redirect()->back()->with('Success', 'Thank you for your rating!');
+        return redirect()->back()->with('Success', 'Obrigado pela sua avaliação!');
     }
 
     /**

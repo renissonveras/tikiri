@@ -1,6 +1,6 @@
-Hello{{$username}},		<br><br>
+Olá {{$username}},		<br><br>
 
-please activate your account using the following link. <br><br>
+por favor ative sua conta usando o seguinte link. <br><br>
 
 -----<br>
 

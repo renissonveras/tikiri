@@ -229,7 +229,7 @@ class="active"
                             if (response == 1)
                             {
 
-                                var message = "Success! You have deleted this notification successfully!";
+                                var message = "Successo! You have deleted this notification successfully!";
                                 $("#alert21").show();
                                 $('#message-success2').html(message);
                             }

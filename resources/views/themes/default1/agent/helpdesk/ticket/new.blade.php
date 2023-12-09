@@ -209,7 +209,7 @@ class="active"
                             <div class="form-group">
                                 <label>{!! Lang::get('lang.assign_to') !!}:</label>
                                 <?php $agents = App\User::where('role', '!=', 'user')->where('active', '=', 1)->get(); ?>
-                                {!! Form::select('assignto', [''=>'Select an Agent','Agents'=>$agents->pluck('first_name','id')->toArray()],null,['class' => 'form-control select']) !!}
+                                {!! Form::select('assignto', [''=>'Selecione um atendente','Atendentes'=>$agents->pluck('first_name','id')->toArray()],null,['class' => 'form-control select']) !!}
                             </div>
                         </div>
                         <div id="response" class="col-md-6 form-group"></div>
@@ -275,7 +275,7 @@ class="active"
     <div class="card-footer">
         <div class="row">
             <div class="col-md-3">
-                <input type="submit" value="{!! Lang::get('lang.create_ticket') !!}" class="btn btn-primary" onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();">
+                <input type="submit" value="{!! Lang::get('lang.create_ticket') !!}" class="btn btn-primary" onclick="this.disabled=true;this.value='Enviando, por favor aguarde...';this.form.submit();">
             </div>
         </div>
     </div>

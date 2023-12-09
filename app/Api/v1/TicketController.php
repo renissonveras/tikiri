@@ -469,7 +469,7 @@ class TicketController extends Controller
             $thread->ticket_id = $ticket->id;
             $thread->user_id = Auth::user()->id;
             $thread->is_internal = 1;
-            $thread->body = 'This Ticket has been assigned to '.$user->first_name.' '.$user->last_name;
+            $thread->body = 'Este ticket foi atribuído para '.$user->first_name.' '.$user->last_name;
             $thread->save();
 
             $company = $this->company();

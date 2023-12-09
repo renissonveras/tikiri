@@ -35,7 +35,7 @@ class="nav-link active"
 @if(Session::has('success'))
 <div class="alert alert-success alert-dismissable">
     <i class="fas fa-check-circle"></i>
-    <b>Success!</b>
+    <b>Successo!</b>
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     {!! Session::get('success') !!}
 </div>

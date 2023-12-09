@@ -26,6 +26,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Lang;
 use Socialite;
+use Illuminate\Support\Facades\App;
+use Adldap\Laravel\Facades\Adldap;
 
 /**
  * ---------------------------------------------------
@@ -240,9 +242,9 @@ class AuthController extends Controller
             $user->save();
             $this->openTicketAfterVerification($user->id);
 
-            return redirect('/auth/login')->with('status', 'Acount activated. Login to start');
+            return redirect('/auth/login')->with('status', 'Conta ativada. Efetue o login pra iniciar');
         } else {
-            return redirect('/auth/login')->with('fails', 'Invalid Token');
+            return redirect('/auth/login')->with('fails', 'Token inválido');
         }
     }
 
@@ -317,8 +319,45 @@ class AuthController extends Controller
             // If attempts > 3 and time < 30 minutes
             $security = Security::whereId('1')->first();
             if ($result == 1) {
-                return redirect()->back()->withErrors('email', 'Incorrect details')->with(['error' => $security->lockout_message, 'referer' => $referer]);
+                return redirect()->back()->withErrors('email', 'Detalhes incorretos')->with(['error' => $security->lockout_message, 'referer' => $referer]);
             }
+            
+            if ($field=='user_name' && \Config::get('ldap.enabled') == '1' && $request->input('email')!='admin') {
+
+                $user_format = config('ldap.connections.default.settings.account_prefix') . $usernameinput . config('ldap.connections.default.settings.account_suffix');
+
+                $user_format = 'uid=riemann,dc=example,dc=com';
+                //change DN and base dn as per the requirement
+                //Adldap::auth()->bind($user_format, $password);
+
+                if(Adldap::auth()->attempt('riemann', 'password', $bindAsUser = true)) {
+                    // the user exists in the LDAP server, with the provided password
+                    $user = \App\User::where('user_name', $usernameinput)->first();
+                    $password = 'password';
+                    if (!$user) {
+                        // the user doesn't exist in the local database, so we have to create one
+
+                        $user = new \App\User();
+                        $user->user_name = $usernameinput;
+                        $user->password = Hash::make($password);
+                        $user->first_name = ucfirst($usernameinput);
+                        if (!empty(\Config::get('ldap.mail_sufix'))) {
+                            $user->email = $usernameinput . config('ldap.mail_sufix');
+                        } else {
+                            $user->email = null;
+                        }
+                        $user->role = 'user';
+                        $code = str_random(60);
+                        $user->remember_token = $code;
+                        $user->active=1;
+                        $user->is_delete=0;
+                        $user->gender=1;
+                        $user->profile_pic='4925.cliente.png';
+                        $user->save();
+                    }
+                }
+            }
+
 
             $check_active = User::where('email', '=', $request->input('email'))->orwhere('user_name', '=', $request->input('email'))->first();
             if (!$check_active) { //check if user exists or not
@@ -404,6 +443,20 @@ class AuthController extends Controller
                     }
                     // If auth ok, redirect to restricted area
                     \Session::put('loginAttempts', $loginAttempts + 1);
+
+                    if ($field=='user_name' && \Config::get('ldap.enabled') == '1' && $request->input('email')!='admin') {
+
+                        $user_format = config('ldap.connections.default.settings.account_prefix') . $usernameinput . config('ldap.connections.default.settings.account_suffix');
+                        $user_format = 'uid=riemann,dc=example,dc=com';
+                        //change DN and base dn as per the requirement
+                        //Adldap::auth()->bind($user_format, $password);
+
+                        if(Adldap::auth()->attempt('riemann', 'password', $bindAsUser = true)) {
+                            // the user exists in the LDAP server, with the provided password
+                            return redirect()->intended($this->redirectPath());
+                        }
+                    }
+
                     if (Auth::Attempt([$field => $usernameinput, 'password' => $password], $request->has('remember'))) {
                         if (Auth::user()->role == 'user') {
                             if ($request->input('referer')) {
@@ -428,7 +481,10 @@ class AuthController extends Controller
                                 'referer'     => $referer, ]);
             // Increment login attempts
         } catch (\Exception $e) {
+            //echo $user_format = config('ldap.connections.default.settings.account_prefix') . $usernameinput . config('ldap.connections.default.settings.account_suffix');
             return redirect()->back()->with('fails', $e->getMessage());
+            //debug($user_format);
+            //return '';
         }
     }
 

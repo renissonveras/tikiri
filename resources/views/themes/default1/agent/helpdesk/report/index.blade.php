@@ -122,15 +122,15 @@ class="active"
                             </button>
                             <div class="dropdown-menu" role="menu">
                                 <a href="#" id="stop" class="dropdown-item">
-                                    <input type="checkbox" name="open" id="open"> {!! lang::get('lang.created') !!} {!! lang::get('lang.tickets') !!}
+                                    <input type="checkbox" name="open" id="open"> Criados
                                 </a>
 
                                 <a href="#" id="stop" class="dropdown-item">
-                                    <input type="checkbox" name="closed" id="closed"> {!! lang::get('lang.closed') !!} {!! lang::get('lang.tickets') !!}
+                                    <input type="checkbox" name="closed" id="closed"> Fechados
                                 </a>
 
                                 <a href="#" id="stop" class="dropdown-item">
-                                    <input type="checkbox" name="reopened" id="reopened"> {!! lang::get('lang.reopened') !!} {!! lang::get('lang.tickets') !!}
+                                    <input type="checkbox" name="reopened" id="reopened"> Reabertos
                                 </a>
                             </div>
                         </div>
@@ -161,9 +161,9 @@ class="active"
                     <style>
                         #legend-holder { float: left; width: 32px; height: 16px;}
                     </style>
-                    <div class="col-md-2"><span id="legend-holder" style="background-color: #6C96DF;"></span>&nbsp; <span> <span id="total-created-tickets1" ></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.created') !!}</span></div> 
-                    <div class="col-md-2"><span id="legend-holder" style="background-color: #6DC5B2;"></span>&nbsp; <span> <span id="total-reopen-tickets1"></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.reopen') !!}</span></div> 
-                    <div class="col-md-2"><span id="legend-holder" style="background-color: #E3B870;"></span>&nbsp; <span> <span id="total-closed-tickets1"></span> {!! Lang::get('lang.tickets') !!} {!! Lang::get('lang.closed') !!}</span></div> 
+                    <div class="col-md-2"><span id="legend-holder" style="background-color: #6C96DF;"></span>&nbsp; <span> <span id="total-created-tickets1" ></span> Criados</span></div> 
+                    <div class="col-md-2"><span id="legend-holder" style="background-color: #6DC5B2;"></span>&nbsp; <span> <span id="total-reopen-tickets1"></span> Reabertos</span></div> 
+                    <div class="col-md-2"><span id="legend-holder" style="background-color: #E3B870;"></span>&nbsp; <span> <span id="total-closed-tickets1"></span> Fechados</span></div> 
                 </div>
             </div>
         </form>
@@ -302,7 +302,7 @@ class="active"
                                     labels: labels,
                                     datasets: [
                                         {
-                                            label: "Open Tickets",
+                                            label: "Tickets abertos",
                                             fillColor: "rgba(93, 189, 255, 0.05)",
                                             strokeColor: "rgba(2, 69, 195, 0.9)",
                                             pointColor: "rgba(2, 69, 195, 0.9)",
@@ -311,7 +311,7 @@ class="active"
                                             pointHighlightStroke: "rgba(220,220,220,1)",
                                             data: open
                                         }, {
-                                            label: "Closed Tickets",
+                                            label: "Tickets Fechados",
                                             fillColor: "rgba(255, 206, 96, 0.08)",
                                             strokeColor: "rgba(221, 129, 0, 0.94)",
                                             pointColor: "rgba(221, 129, 0, 0.94)",
@@ -321,7 +321,7 @@ class="active"
                                             data: closed
 
                                         }, {
-                                            label: "Reopened Tickets",
+                                            label: "Tickets reabertos",
                                             fillColor: "rgba(104, 255, 220, 0.06)",
                                             strokeColor: "rgba(0, 149, 115, 0.94)",
                                             pointColor: "rgba(0, 149, 115, 0.94)",
@@ -538,7 +538,7 @@ class="active"
                                             labels: labels,
                                             datasets: [
                                                 {
-                                                    label: "Open Tickets",
+                                                    label: "Tickets Abertos",
                                                     fillColor: "rgba(93, 189, 255, 0.05)",
                                                     strokeColor: "rgba(2, 69, 195, 0.9)",
                                                     pointColor: "rgba(2, 69, 195, 0.9)",
@@ -548,7 +548,7 @@ class="active"
                                                     data: open
                                                 }
                                                 , {
-                                                    label: "Closed Tickets",
+                                                    label: "Tickets Fechados",
                                                     fillColor: "rgba(255, 206, 96, 0.08)",
                                                     strokeColor: "rgba(221, 129, 0, 0.94)",
                                                     pointColor: "rgba(221, 129, 0, 0.94)",
@@ -558,7 +558,7 @@ class="active"
                                                     data: closed
                                                 }
                                                 , {
-                                                    label: "Reopened Tickets",
+                                                    label: "Tickets Reabertos",
                                                     fillColor: "rgba(104, 255, 220, 0.06)",
                                                     strokeColor: "rgba(0, 149, 115, 0.94)",
                                                     pointColor: "rgba(0, 149, 115, 0.94)",

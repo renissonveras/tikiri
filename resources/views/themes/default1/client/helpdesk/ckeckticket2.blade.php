@@ -336,7 +336,7 @@ foreach ($conversations as $conversation) {
                     @if(Session::has('success1'))
                         <div class="alert alert-success alert-dismissable" id='formabc'>
                             <i class="fa  fa-check-circle"></i>
-                            <b>Success!</b>
+                            <b>Successo!</b>
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{Session::get('success1')}}
                         </div>
@@ -462,7 +462,7 @@ $('#foo2').submit();
                     $("#refresh").show();
                     $("#loader").hide();
                     // $("#d1").trigger("click");
-                    // var message = "Success! Your Ticket have been Closed";
+                    // var message = "Successo! Your Ticket have been Closed";
                     // $("#alert11").show();
                     // $('#message-success1').html(message);
                     // setInterval(function(){
@@ -493,7 +493,7 @@ $('#foo2').submit();
                     $("#refresh").show();
                     $("#loader").hide();
 
-                    var message = "Success! Your Ticket have been Resolved";
+                    var message = "Successo! Your Ticket have been Resolved";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide();
@@ -523,7 +523,7 @@ $('#foo2').submit();
                     $("#refresh").show();
                     $("#loader").hide();
 
-                    var message = "Success! Your Ticket have been Opened";
+                    var message = "Successo! Your Ticket have been Opened";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);

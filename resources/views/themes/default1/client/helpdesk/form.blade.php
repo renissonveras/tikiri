@@ -144,29 +144,21 @@ class = "nav-item active"
                         @endif
 
                         @if(!Auth::user())
-
-                        <div class="col-md-2 form-group {{ Session::has('country_code_error') ? 'has-error' : '' }}">
-                            {!! Form::label('Code',Lang::get('lang.country-code')) !!}
-                             @if($email_mandatory->status == 0 || $email_mandatory->status == '0')
-                                    <span class="text-red"> *</span>
-                                    @endif
-
-                            {!! Form::text('Code',null,['class' => 'form-control', 'placeholder' => $phonecode, 'title' => Lang::get('lang.enter-country-phone-code')]) !!}
-                        </div>
-                        <div class="col-md-5 form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
+                        {!! Form::hidden('Code','055',['class' => 'form-control']) !!}
+                        <div class="col-md-6 form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
                             {!! Form::label('mobile',Lang::get('lang.mobile_number')) !!}
                              @if($email_mandatory->status == 0 || $email_mandatory->status == '0')
                                     <span class="text-red"> *</span>
                                     @endif
                             {!! Form::text('mobile',null,['class' => 'form-control']) !!}
                         </div>
-                        <div class="col-md-5 form-group {{ $errors->has('Phone') ? 'has-error' : '' }}">
+                        <div class="col-md-6 form-group {{ $errors->has('Phone') ? 'has-error' : '' }}">
                             {!! Form::label('Phone',Lang::get('lang.phone')) !!}
                             {!! Form::text('Phone',null,['class' => 'form-control']) !!}
                         </div>
                         @else
                             {!! Form::hidden('mobile',Auth::user()->mobile,['class' => 'form-control']) !!}
-                            {!! Form::hidden('Code',Auth::user()->country_code,['class' => 'form-control']) !!}
+                            {!! Form::hidden('Code','055',['class' => 'form-control']) !!}
                             {!! Form::hidden('Phone',Auth::user()->phone_number,['class' => 'form-control']) !!}
 
                        @endif
@@ -226,7 +218,7 @@ class = "nav-item active"
                         <div class="col-md-12" id="response"> </div>
                         <div id="ss" class="xs-md-6 form-group {{ $errors->has('') ? 'has-error' : '' }}"> </div>
                                 <div class="col-md-12 form-group">
-                                    {!! Form::button('<i class="fas fa-save"></i> ' . Lang::get('lang.submit'), ['type'=>'submit', 'class'=>'btn btn-info float-right', 'style'=>'style="border-color: rgb(0, 192, 239); background-color: rgb(0, 154, 186); color: white;', 'onclick' => 'this.disabled=true;this.innerHTML="Sending, please wait...";this.form.submit();', 'data-v-fce8d630']) !!}
+                                    {!! Form::button('<i class="fas fa-save"></i> ' . Lang::get('lang.submit'), ['type'=>'submit', 'class'=>'btn btn-info float-right', 'style'=>'style="border-color: rgb(0, 192, 239); background-color: rgb(0, 154, 186); color: white;', 'onclick' => 'this.disabled=true;this.innerHTML="Enviando, por favor aguarde...";this.form.submit();', 'data-v-fce8d630']) !!}
                                 </div>
                             <div class="col-md-12" id="response"> </div>
                         <div id="ss" class="xs-md-6 form-group {{ $errors->has('') ? 'has-error' : '' }}"> </div>

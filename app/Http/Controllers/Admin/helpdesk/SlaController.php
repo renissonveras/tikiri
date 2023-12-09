@@ -80,6 +80,8 @@ class SlaController extends Controller
         try {
             /* Fill the request values to Sla_plan Table  */
             /* Check whether function success or not */
+            $gracePeriod = $request->input('grace_period').' '.$request->input('unit_grace_period');
+            $request->offsetSet('grace_period', $gracePeriod);
             $sla->fill($request->input())->save();
             /* redirect to Index page with Success Message */
             return redirect('sla')->with('success', Lang::get('lang.sla_plan_created_successfully'));
@@ -126,6 +128,8 @@ class SlaController extends Controller
             /* Fill values to selected field using Id except Check box */
             $slas = Sla_plan::whereId($id)->first();
             $slas->fill($request->except('transient', 'ticket_overdue'))->save();
+            $gracePeriod = $request->input('grace_period').' '.$request->input('unit_grace_period');
+            $slas->grace_period = $gracePeriod;
             /* Update transient checkox field */
             $slas->transient = $request->input('transient');
             /* Update ticket_overdue checkox field */

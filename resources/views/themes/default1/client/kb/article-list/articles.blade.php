@@ -1,7 +1,7 @@
 @extends('themes.default1.client.layout.client')
 
 @section('title')
-    Article List -
+    Base de conhecimento -
 @stop
 
 @section('kb')
@@ -58,7 +58,7 @@
 
                     <span style="margin-right:0px;"><i class="far fa-clock fa-fw"></i>
 
-                        <span>{{$arti->created_at->format('l, d-m-Y')}}</span>
+                        <span>{{$arti->created_at->format('d/m/Y')}}</span>
                     </span>
                 </div>
             </footer>

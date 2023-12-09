@@ -367,9 +367,9 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <select class="form-control" style="width:55%" >
-                                                            <option>Select a canned response</option>
-                                                            <option>Original Message</option>
-                                                            <option>Last Message</option>
+                                                            <option>Selecione uma resposta automática</option>
+                                                            <option>Mensagem original</option>
+                                                            <option>Última mensagem</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -377,7 +377,7 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label>Reply Content</label>
+                                                        <label>Responder conteúdo</label>
                                                     </div>
                                                     <div class="col-md-10">
                                                         <textarea id="txtEditor"></textarea>

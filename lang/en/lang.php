@@ -1117,7 +1117,7 @@ return [
     'in_minutes'                                     => 'In minutes',
     'add_another_owner'                              => 'Add another owner',
     'user-not-found'                                 => 'User not found or user is inactive. Try again or add a new user.',
-    'change-success'                                 => 'Success! owner has been changed for this ticket.',
+    'change-success'                                 => 'Successo! owner has been changed for this ticket.',
     'user-exists'                                    => 'User already exists. Try search existing user.',
     'valid-email'                                    => 'Enter a valid email address.',
     'search_user'                                    => 'Search user',

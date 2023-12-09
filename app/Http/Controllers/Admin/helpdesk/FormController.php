@@ -543,7 +543,7 @@ class FormController extends Controller
         $session = self::getSession();
         $script = self::jqueryScript($field->id, $field->name, $field_type);
         $form_hidden = Form::hidden('fieldid[]', $field->id, ['id' => 'hidden'.$session.$field->id]).Form::label($field->label, $field->label, ['class' => $required_class]);
-        $select = Form::$field_type($field->name, ['' => 'Select', 'Selects' => self::removeUnderscoreFromDB($field->values()->pluck('field_value', 'field_value')->toArray())], null, ['class' => "form-control $session$field->id", 'id' => $session.$field->id, 'required' => $required]).'</br>';
+        $select = Form::$field_type($field->name, ['' => 'Selecione', 'Opções' => self::removeUnderscoreFromDB($field->values()->pluck('field_value', 'field_value')->toArray())], null, ['class' => "form-control $session$field->id", 'id' => $session.$field->id, 'required' => $required]).'</br>';
         $html = $script.$form_hidden.$select;
         $response_div = '<div id='.$session.$field->name.'></div>';
 

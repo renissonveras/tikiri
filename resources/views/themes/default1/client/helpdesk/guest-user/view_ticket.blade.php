@@ -803,7 +803,7 @@ function AddCcc(){
                     $("#hide2").show();
                     $("#hidespin").show();
                     $("#d1").trigger("click");
-                    var message = "Success! Your Ticket have been Closed";
+                    var message = "Successo! Your Ticket have been Closed";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);   
@@ -826,7 +826,7 @@ function AddCcc(){
                     $("#d1").trigger("click");
                     $("#hide2").show();
                     $("#show2").hide();
-                    var message = "Success! Your Ticket have been Resolved";
+                    var message = "Successo! Your Ticket have been Resolved";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);   
@@ -849,7 +849,7 @@ function AddCcc(){
                     $("#d1").trigger("click");
                     $("#hide2").show();
                     $("#show2").hide();
-                    var message = "Success! Your Ticket have been Opened";
+                    var message = "Successo! Your Ticket have been Opened";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);   
@@ -873,7 +873,7 @@ function AddCcc(){
                     $("#d2").trigger("click");
                     $("#hide2").show();
                     $("#show2").hide();
-                    var message = "Success! Your Ticket have been moved to Trash";
+                    var message = "Successo! Your Ticket have been moved to Trash";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);   
@@ -890,7 +890,7 @@ function AddCcc(){
                 success: function(response) {
                     $("#dismis2").trigger("click");
                     $("#refresh").load("../thread/{{$tickets->id}}   #refresh");
-                    var message = "Success! This Email have been banned";
+                    var message = "Successo! This Email have been banned";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function(){$("#alert11").hide(); },4000);   
@@ -981,7 +981,7 @@ function AddCcc(){
                     {
                         $("#refresh1").load("../thread/{{$tickets->id}}   #refresh1");
                         // $("#t4").load("../thread/{{$tickets->id}}   #t4");
-                        var message = "Success! You have successfully replied to your ticket";
+                        var message = "Successo! You have successfully replied to your ticket";
                         $("#alert21").show();
                         $('#message-success2').html(message);
                         setInterval(function(){$("#alert21").hide();  },4000);   
@@ -1024,7 +1024,7 @@ function AddCcc(){
                     {
                         $("#refresh1").load("../thread/{{$tickets->id}}  #refresh1");
                         // $("#t1").load("../thread/{{$tickets->id}}  #t1");
-                        var message = "Success! You have successfully replied to your ticket";
+                        var message = "Successo! You have successfully replied to your ticket";
                         $("#alert21").show();
                         $('#message-success2').html(message);
                         setInterval(function(){$("#alert21").hide(); },4000);   
@@ -1055,7 +1055,7 @@ function AddCcc(){
                     if (response == 1)
                     {
                         // alert('ticket has been un assigned');
-                        var message = "Success! You have Unassigned your ticket";
+                        var message = "Successo! You have Unassigned your ticket";
                         $("#alert21").show();
                         $('#message-success2').html(message);
                         setInterval(function(){$("#dismiss21").trigger("click"); },2000);   

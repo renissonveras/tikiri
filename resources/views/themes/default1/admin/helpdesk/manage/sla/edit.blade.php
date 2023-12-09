@@ -65,10 +65,22 @@ class="nav-link active"
                 </div>
             </div>
             <!-- Grace Period text form Required -->
-            <div class="col-md-4">
+            <?php 
+                $numberGracePeriod = preg_replace("/[^0-9]/", "", $slas->grace_period);
+                $unitGracePeriod = str_replace($numberGracePeriod, "", $slas->grace_period);
+                $unitGracePeriod = trim($unitGracePeriod);
+            ?>
+            <div class="col-md-2">
                 <div class="form-group {{ $errors->has('grace_period') ? 'has-error' : '' }}">
                     {!! Form::label('grace_period',Lang::get('lang.grace_period')) !!}
-                    {!! Form::select('grace_period',['6 Hours'=>'6 Hours', '12 Hours'=>'12 Hours', '18 Hours'=>'18 Hours', '24 Hours'=>'24 Hours', '36 Hours'=>'36 Hours', '48 Hours'=>'48 Hours'],null,['class' => 'form-control']) !!}
+                    {!! Form::number('grace_period',$numberGracePeriod,['class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group {{ $errors->has('grace_period') ? 'has-error' : '' }}">
+                    {!! Form::label('unit_grace_period',Lang::get('lang.unit')) !!}&nbsp;<br/>
+                    {!! $unitGracePeriod=='Hours' ? Form::radio('unit_grace_period','Hours',true) : Form::radio('unit_grace_period','Hours') !!} {{Lang::get('lang.hour')}}&nbsp;&nbsp;
+                    {!! $unitGracePeriod=='Minutes' ? Form::radio('unit_grace_period','Minutes',true) : Form::radio('unit_grace_period','Minutes') !!} {{Lang::get('lang.minute')}}
                 </div>
             </div>
             <!-- status radio: required: Active|Dissable -->

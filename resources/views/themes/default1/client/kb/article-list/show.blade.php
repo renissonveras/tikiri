@@ -55,7 +55,7 @@ $category_id = $all->pluck('category_id')->toArray();
 
                 <span class="date">
                     <i class="far fa-clock fa-fw"></i> 
-                    <time datetime="2013-09-19T20:01:58+00:00">{{$arti->created_at->format('l, d-m-Y')}}</time>
+                    <time datetime="2013-09-19T20:01:58+00:00">{{$arti->created_at->format('d/m/Y')}}</time>
                 </span>
 
                 <span class="category">
@@ -100,7 +100,7 @@ $category_id = $all->pluck('category_id')->toArray();
 
                         <div class="comment-metadata">
                             <small class="date text-muted">
-                                <time datetime="2013-10-23T01:50:50+00:00">{!! $comment->created_at->format('l, d-m-Y') !!}</time>
+                                <time datetime="2013-10-23T01:50:50+00:00">{!! $comment->created_at->format('d/m/Y') !!}</time>
                             </small>
                         </div><!-- .comment-metadata -->
                     </footer><!-- .comment-meta -->

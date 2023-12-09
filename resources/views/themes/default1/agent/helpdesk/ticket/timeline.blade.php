@@ -138,14 +138,14 @@ if ($thread->title != "") {
 
             if ($group->can_edit_ticket == 1) {
                 ?>
-            <button type="button" class="btn btn-sm btn-default btn-tool">
+            <button type="button" class="btn btn-sm btn-default btn-tool" data-toggle="modal" data-target="#Edit">
 
                 <i class="fas fa-edit" style="color:green;"></i> {{trans('lang.edit')}}
 
             </button>            <?php } ?>
 
             <?php if ($group->can_assign_ticket == 1) { ?>
-            <button type="button" class="btn btn-sm btn-default btn-tool">
+            <button type="button" class="btn btn-sm btn-default btn-tool" data-toggle="modal" data-target="#assign{{$tickets->id}}">
 
                 <i class="fas fa-hand-point-right" style="color:orange;"></i> {{trans('lang.assign')}}
 
@@ -827,7 +827,7 @@ if ($thread->title != "") {
                         <div class="form-group">
                             <label>{!! Lang::get('lang.title') !!} <span class="text-red"> *</span></label>
                             <input type="text" name="subject" class="form-control" value="{{$thread->title}}" >
-                            <spam id="error-subject" style="display:none" class="help-block text-red">This is a required field</spam>
+                            <spam id="error-subject" style="display:none" class="help-block text-red">Este é um campo requerido</spam>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -843,7 +843,7 @@ if ($thread->title != "") {
                                         ?> >{!! $sla_plan->grace_period !!}</option>
                                         @endforeach
                                     </select>
-                                    <spam id="error-sla" style="display:none" class="help-block text-red">This is a required field</spam>
+                                    <spam id="error-sla" style="display:none" class="help-block text-red">Este é um campo requerido</spam>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -860,7 +860,7 @@ if ($thread->title != "") {
                                         ?> >{!! $helptopic->topic !!}</option>
                                         @endforeach
                                     </select>
-                                    <spam id="error-help" style="display:none" class="help-block text-red">This is a required field</spam>
+                                    <spam id="error-help" style="display:none" class="help-block text-red">Este é um campo requerido</spam>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -876,7 +876,7 @@ if ($thread->title != "") {
                                         ?> >{!! $ticketsource->value !!}</option>
                                         @endforeach 
                                     </select>
-                                    <spam id="error-source" style="display:none" class="help-block text-red">This is a required field</spam>
+                                    <spam id="error-source" style="display:none" class="help-block text-red">Este é um campo requerido</spam>
                                 </div>
                             </div>
     <?php ?>
@@ -893,7 +893,7 @@ if ($thread->title != "") {
                                         ?> >{!! $ticket_priority->priority_desc !!}</option>
                                         @endforeach
                                     </select>
-                                    <spam id="error-priority" style="display:none" class="help-block text-red">This is a required field</spam>
+                                    <spam id="error-priority" style="display:none" class="help-block text-red">Este é um campo requerido</spam>
                                 </div>
                             </div>
                         </div>
@@ -963,7 +963,7 @@ if ($thread->title != "") {
                         <div class="tab-pane active" id="ahah1">
                             <div id="change_alert" class="alert alert-danger alert-dismissable" style="display:none;">
                                 <button id="change_dismiss" type="button" class="close" data-dismiss="alert"  aria-hidden="true">×</button>
-                                <b><i class="icon fa fa-exclamation-circle"></i>Alert!</b>
+                                <b><i class="icon fa fa-exclamation-circle"></i>Alerta!</b>
                                 <div id="message-success42"></div>
                             </div>
                             <div>
@@ -981,10 +981,10 @@ if ($thread->title != "") {
                                         <div id="change-refresh" class="col-md-10">
 <?php $user = App\User::where('id', '=', $tickets->user_id)->first(); ?>
                                             <!-- <b>{!! Lang::get('lang.user_details') !!}User Details</b><br/> -->
-                                            <b>Current owner</b><br/>
+                                            <b>Proprietário atual</b><br/>
                                             {!! $user->user_name !!}<br/>{!! $user->email !!}<br/>
                                             @if($user->phone != null)
-                                            <b>{!! Lang::get('lang.contact_informations') !!}Contact Informations</b><br/>
+                                            <b>{!! Lang::get('lang.contact_informations') !!}Informações de contato</b><br/>
                                             {!! $user->phone !!}
                                             @endif
                                         </div>
@@ -1002,7 +1002,7 @@ if ($thread->title != "") {
                         <div class="tab-pane" id="haha2">
                             <div id="change_alert2" class="alert alert-danger alert-dismissable" style="display:none;">
                                 <button id="change_dismiss" type="button" class="close" data-dismiss="alert"  aria-hidden="true">×</button>
-                                <b><i class="icon fa fa-check"></i>Alert!</b>
+                                <b><i class="icon fa fa-check"></i>Alerta!</b>
                                 <div id="message-success422"></div>
                             </div>
                             <div id="abc" class="p-2">
@@ -1041,7 +1041,7 @@ if ($thread->title != "") {
                     </div>
                     <div id="assign_alert" class="alert alert-success alert-dismissable" style="display:none;">
                         <button id="assign_dismiss" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-check"></i>Alert!</h4>
+                        <h4><i class="icon fa fa-check"></i>Alerta!</h4>
                         <div id="message-success1"></div>
                     </div>
                     <div class="modal-body">
@@ -1058,7 +1058,7 @@ if ($thread->title != "") {
                                 $count_teams = count($teams);
                                 ?>
                                
-                                <optgroup label="Agents ( {!! $count_assign !!} )">
+                                <optgroup label="Atendentes ( {!! $count_assign !!} )">
                                     @foreach($assign as $user)
                                     <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name}}</option>
                                     @endforeach
@@ -1596,7 +1596,7 @@ if ($thread->title != "") {
             // $('#message-success1').html(message);
             // setInterval(function(){$("#alert11").hide(); },4000);   
             location.reload();
-            var message = "Success!";
+            var message = "Successo!";
                     $("#alert10").css('display','block');
                     $('#message-success0').html(message);
                     setInterval(function(){$("#dismiss10").trigger("click"); }, 2000);

@@ -1,7 +1,7 @@
 @extends('themes.default1.client.layout.client')
 
 @section('title')
-Knowledge Base -
+Base de Conhecimento -
 @stop
 @section('breadcrumb')
     {{--<div class="site-hero clearfix">--}}

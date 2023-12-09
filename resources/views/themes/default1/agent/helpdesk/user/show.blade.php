@@ -1341,12 +1341,12 @@ class="nav-link active"
                                     $teams = App\Model\helpdesk\Agent\Teams::all();
                                     $count_teams = count($teams);
                                     ?>
-                                    <!--    <optgroup label="Teams ( {!! $count_teams !!} )">
+                                    <optgroup label="Equipes ( {!! $count_teams !!} )">
                                            @foreach($teams as $team)
                                            <option  value="team_{{$team->id}}">{!! $team->name !!}</option>
                                            @endforeach
-                                       </optgroup> -->
-                                    <optgroup label="Agents ( {!! $count_assign !!} )">
+                                    </optgroup>
+                                    <optgroup label="Atendentes ( {!! $count_assign !!} )">
                                         @foreach($assign as $user)
                                         <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name}}</option>
                                         @endforeach

@@ -100,7 +100,7 @@ class ReportController extends Controller
         for ($i = $date1; $i <= $date2; $i = $i + 86400) {
             $j++;
             $thisDate = date('Y-m-d', $i);
-            $thisDate1 = date('jS F', $i);
+            $thisDate1 = date('d/m/Y', $i);
             $open_array = [];
             $closed_array = [];
             $reopened_array = [];

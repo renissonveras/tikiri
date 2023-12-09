@@ -225,6 +225,6 @@ return [
         'UTC'         => App\Http\Controllers\Agent\helpdesk\TicketController::class,
         'UnAuth'      => App\Http\Controllers\Client\helpdesk\UnAuthController::class,
         'Zipper'      => 'Chumper\Zipper\Zipper',
-        'phone'       => 'The :attribute field contains an invalid number.',
+        'phone'       => 'O campo :attribute contém um número inválido.',
     ])->toArray(),
 ];

@@ -60,9 +60,11 @@ class FilterController extends Controller
     {
         $table = $this->table();
         if ($request->has('segment')) {
+
             $segment = $this->request->input('segment');
             $table = $this->formatUserTickets($segment);
         } else {
+
             if ($request->has('api') && $request->get('api') == '1') {
                 $inputs = [];
                 foreach ($request->all() as $key => $value) {
@@ -76,6 +78,7 @@ class FilterController extends Controller
             } else {
                 $inputs = json_decode(htmlspecialchars_decode($request->get('options')));
                 // dd($inputs);
+                //debug($inputs);
                 $table = $this->checkRequestIsCorrect($table, (array) $inputs);
             }
         }
@@ -197,7 +200,6 @@ class FilterController extends Controller
         switch ($input) {
             case 'show':
                 $table = $this->showPage($value, $table);
-
                 return $table;
                 break;
             case 'status':
@@ -569,9 +571,9 @@ class FilterController extends Controller
                 array_push($team_array, substr($value, 2, strlen($value)));
             }
         }
-
         $users = $this->getUserIDs($agent_array, 'assign');
         $teams = $this->getTeamIds($team_array);
+        debug($teams);
         $table = $table->where(function ($query) use ($teams, $users) {
             $query->whereIn('tickets.team_id', $teams)
                     ->orWhereIn('tickets.assigned_to', $users);

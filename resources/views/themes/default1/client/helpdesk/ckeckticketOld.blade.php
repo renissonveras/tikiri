@@ -463,7 +463,7 @@ foreach ($conversations as $conversation) {
                     $("#refresh").show();
                     $("#loader").hide();
                     // $("#d1").trigger("click");
-                    // var message = "Success! Your Ticket have been Closed";
+                    // var message = "Successo! Your Ticket have been Closed";
                     // $("#alert11").show();
                     // $('#message-success1').html(message);
                     // setInterval(function(){
@@ -493,7 +493,7 @@ foreach ($conversations as $conversation) {
                     $("#refresh").load("../check_ticket/{!! $id !!}  #refresh");
                     $("#refresh").show();
                     $("#loader").hide();
-                    var message = "Success! Your Ticket have been Resolved";
+                    var message = "Successo! Your Ticket have been Resolved";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function() {
@@ -524,7 +524,7 @@ foreach ($conversations as $conversation) {
                     $("#refresh").show();
                     $("#loader").hide();
 
-                    var message = "Success! Your Ticket have been Opened";
+                    var message = "Successo! Your Ticket have been Opened";
                     $("#alert11").show();
                     $('#message-success1').html(message);
                     setInterval(function() {

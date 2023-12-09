@@ -458,7 +458,7 @@ if (Auth::user()->role == 'agent') {
                     if (response == 1)
                     {
                         location.reload();
-                        var message = "Success!";
+                        var message = "Successo!";
                             $("#alert11").show();
                             $('#message-success1').html(message);
                             setInterval(function(){$("#dismiss11").trigger("click"); }, 2000);

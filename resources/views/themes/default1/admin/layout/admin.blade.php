@@ -174,11 +174,6 @@
 
                             <ul class="products-list product-list-in-card pl-2 pr-2" style="height: 350px;overflow-y: scroll;">
 
-                                <li class="dropdown-header">You have {!! $notifications->count() !!} notifications.
-
-                                    <a class="float-right" id="read-all" href="#">Mark all as read.</a>
-                                </li>
-
                                 @if($notifications->count())
                                 @foreach($notifications->orderBy('created_at', 'desc')->get()->take(10) as $notification)
 

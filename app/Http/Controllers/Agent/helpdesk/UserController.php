@@ -540,7 +540,7 @@ class UserController extends Controller
                         $thread->ticket_id = $ticket->id;
                         $thread->user_id = Auth::user()->id;
                         $thread->is_internal = 1;
-                        $thread->body = 'This Ticket has been assigned to '.$assignee;
+                        $thread->body = 'Este ticket foi atribuído para '.$assignee;
                         $thread->save();
                     }
                     $user = User::find($id);

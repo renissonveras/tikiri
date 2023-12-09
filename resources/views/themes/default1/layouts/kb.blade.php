@@ -82,10 +82,10 @@ if ($company != null) {
                                     <!-- Menu Footer-->
                                     <li class="user-footer" style="background-color:#1a2226;">
                                         <div class="pull-left">
-                                            <a href="{{URL::route('profile')}}" class="btn btn-info btn-sm"><b>Profile</b></a>
+                                            <a href="{{URL::route('profile')}}" class="btn btn-info btn-sm"><b>Perfil</b></a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="{{url('auth/logout')}}" class="btn btn-danger btn-sm"><b>Sign out</b></a>
+                                            <a href="{{url('auth/logout')}}" class="btn btn-danger btn-sm"><b>Sair</b></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -139,28 +139,28 @@ if ($company != null) {
                                         <li class="header">TICKETS</li>
                                         <li>
                                              <a href="{{url('kb/category')}}">
-                                                <i class="fa fa-user"></i> <span>Category</span>
+                                                <i class="fa fa-user"></i> <span>Categoria</span>
                                                 <small class="label pull-right bg-green"></small>
                                             </a>
                                         </li>
 
                                         <li>
                                             <a href="{{url('kb/article')}}">
-                                                <i class="fa fa-th"></i> <span>Article</span>
+                                                <i class="fa fa-th"></i> <span>Artigos</span>
                                                 <small class="label pull-right bg-green"></small>
                                             </a>
                                         </li>
 
                                         <li>
                                             <a href="{{url('kb/page')}}">
-                                                <i class="fa fa-th"></i> <span>Page</span>
+                                                <i class="fa fa-th"></i> <span>Página</span>
                                                 <small class="label pull-right bg-green"></small>
                                             </a>
                                         </li>
 
                                         <li>
                                             <a href="{{url('kb/page')}}">
-                                                <i class="fa fa-th"></i> <span>Page</span>
+                                                <i class="fa fa-th"></i> <span>Página</span>
                                                 <small class="label pull-right bg-green"></small>
                                             </a>
                                         </li>
@@ -186,7 +186,7 @@ if ($company != null) {
                             <div class="pull-right hidden-xs">
                                 <b>{!! Lang::get('lang.version') !!}</b> 0.1
                             </div>
-            <strong>Copyright &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}">{!! $company->company_name !!}</a>.</strong> All rights reserved. Powered by <a href="http://www.faveohelpdesk.com/">Faveo</a>
+            <strong>Copyright &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}">{!! $company->company_name !!}</a>.</strong> Todos os direitos reservados. Distribuído por <a href="https://github.com/renissonveras/tikiri">Tikiri</a>
                         </footer>
                     </div><!-- ./wrapper -->
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

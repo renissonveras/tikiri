@@ -88,7 +88,7 @@ class="nav-item menu-open"
             </div>
             <div class="col-sm-3 {{ $errors->has('parent') ? 'has-error' : '' }}">
                 {!! Form::label('parent',Lang::get('lang.parent')) !!}
-                {!!Form::select('parent',[''=>'Select a Category','Categories'=>$category],null,['class' => 'form-control select']) !!}
+                {!!Form::select('parent',[''=>'Selecione um categoria','Categories'=>$category],null,['class' => 'form-control select']) !!}
             </div>
             <div class="col-sm-3 {{ $errors->has('status') ? 'has-error' : '' }}">
                 {!! Form::label('status',Lang::get('lang.status')) !!}

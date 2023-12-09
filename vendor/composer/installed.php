@@ -1,15 +1,33 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'ac7fc33df23e56865e3a2037721854a57ad36061',
+        'pretty_version' => 'dev-development',
+        'version' => 'dev-development',
+        'reference' => '51395cb170570fb58ab39231f147c72c1c546310',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'adldap2/adldap2' => array(
+            'pretty_version' => 'v10.5.0',
+            'version' => '10.5.0.0',
+            'reference' => 'e400eecb7bd7de8ee79aae320b54ad70d37f86b1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../adldap2/adldap2',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'adldap2/adldap2-laravel' => array(
+            'pretty_version' => 'v6.1.7',
+            'version' => '6.1.7.0',
+            'reference' => 'd587c4dea4ffefbbbea7601958c125216ea43452',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../adldap2/adldap2-laravel',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'aws/aws-crt-php' => array(
             'pretty_version' => 'v1.2.4',
             'version' => '1.2.4.0',
@@ -642,9 +660,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'ac7fc33df23e56865e3a2037721854a57ad36061',
+            'pretty_version' => 'dev-development',
+            'version' => 'dev-development',
+            'reference' => '51395cb170570fb58ab39231f147c72c1c546310',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1285,8 +1303,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1913,6 +1931,15 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
+            'dev_requirement' => false,
+        ),
+        'tightenco/collect' => array(
+            'pretty_version' => 'v9.52.7',
+            'version' => '9.52.7.0',
+            'reference' => 'b15143cd11fe01a700fcc449df61adc64452fa6d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tightenco/collect',
+            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'tijsverkoyen/css-to-inline-styles' => array(
