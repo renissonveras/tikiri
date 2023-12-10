@@ -9,7 +9,7 @@ Homestead.json
 /node_modules
 /public/error_log
 #/public/lb-faveo/media/
-/public/uploads
+#/public/uploads
 /public/photos/
 /app/FaveoJob
 /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php

@@ -27,6 +27,7 @@ use Illuminate\Support\Str;
 use Lang;
 use Socialite;
 use Illuminate\Support\Facades\App;
+//use Adldap\Adldap;
 use Adldap\Laravel\Facades\Adldap;
 
 /**
@@ -324,13 +325,7 @@ class AuthController extends Controller
             
             if ($field=='user_name' && \Config::get('ldap.enabled') == '1' && $request->input('email')!='admin') {
 
-                $user_format = config('ldap.connections.default.settings.account_prefix') . $usernameinput . config('ldap.connections.default.settings.account_suffix');
-
-                $user_format = 'uid=riemann,dc=example,dc=com';
-                //change DN and base dn as per the requirement
-                //Adldap::auth()->bind($user_format, $password);
-
-                if(Adldap::auth()->attempt('riemann', 'password', $bindAsUser = true)) {
+                if(Adldap::auth()->attempt($usernameinput, $password, $bindAsUser = true)) {
                     // the user exists in the LDAP server, with the provided password
                     $user = \App\User::where('user_name', $usernameinput)->first();
                     $password = 'password';
@@ -347,12 +342,13 @@ class AuthController extends Controller
                             $user->email = null;
                         }
                         $user->role = 'user';
-                        $code = str_random(60);
+                        $code = Str::random(60);
                         $user->remember_token = $code;
                         $user->active=1;
                         $user->is_delete=0;
                         $user->gender=1;
-                        $user->profile_pic='4925.cliente.png';
+                        $user->user_language='pt-br';
+                        $user->profile_pic='user_padrao.png';
                         $user->save();
                     }
                 }
@@ -445,14 +441,16 @@ class AuthController extends Controller
                     \Session::put('loginAttempts', $loginAttempts + 1);
 
                     if ($field=='user_name' && \Config::get('ldap.enabled') == '1' && $request->input('email')!='admin') {
+                        if (Auth::Attempt([$field => $usernameinput, 'password' => 'password'], $request->has('remember'))) {
+                            if (Auth::user()->role == 'user') {
+                                if ($request->input('referer')) {
+                                    return \Redirect::route($request->input('referer'));
+                                }
 
-                        $user_format = config('ldap.connections.default.settings.account_prefix') . $usernameinput . config('ldap.connections.default.settings.account_suffix');
-                        $user_format = 'uid=riemann,dc=example,dc=com';
-                        //change DN and base dn as per the requirement
-                        //Adldap::auth()->bind($user_format, $password);
+                                // return \Redirect::route('/');
+                                return redirect()->intended($this->redirectPath());
+                            }
 
-                        if(Adldap::auth()->attempt('riemann', 'password', $bindAsUser = true)) {
-                            // the user exists in the LDAP server, with the provided password
                             return redirect()->intended($this->redirectPath());
                         }
                     }
