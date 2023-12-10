@@ -291,7 +291,8 @@ return [
     'sync_attributes' => [
 
         //'email' => 'userprincipalname',
-        'user_name' => 'uid', // was 'email' => 'userprincipalname',
+        //'user_name' => 'uid', // was 'email' => 'userprincipalname',
+        'user_name' => env('LDAP_SYNC_IDENT', 'uid'),
         'name' => 'cn',
 
     ],
