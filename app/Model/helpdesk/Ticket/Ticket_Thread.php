@@ -65,6 +65,10 @@ class Ticket_Thread extends Model
     {
         $value = $this->attributes['body'];
         $str = str_replace("'", '"', $value);
+        $str = str_replace("<head>", '', $str);
+        $str = str_replace("</head>", '', $str);
+        $str = str_replace("<body>", '', $str);
+        $str = str_replace("</body>", '', $str);
         $html = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $str);
         $string = trim(preg_replace('/\s+/', ' ', $html));
         $content = $this->inlineAttachment($string);
@@ -75,7 +79,7 @@ class Ticket_Thread extends Model
     public function setTitleAttribute($value)
     {
         if ($value == '') {
-            $this->attributes['title'] = 'No available';
+            $this->attributes['title'] = 'Sem título';
         } else {
             $this->attributes['title'] = $value;
         }

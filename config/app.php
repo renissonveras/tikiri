@@ -66,7 +66,8 @@ return [
       | ahead and set this to a sensible default for you out of the box.
       |
      */
-    'timezone' => 'America/Boa_Vista',
+    //'timezone' => 'America/Boa_Vista',
+    'timezone' => 'UTC',
     /*
       |--------------------------------------------------------------------------
       | Application Locale Configuration

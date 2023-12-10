@@ -227,12 +227,12 @@ class StorageController extends Controller
                     if (isset($structure->disposition)) {
                         $disposition = $structure->disposition;
                     }
-                    $filename = rand(1111, 9999).'_'.$attachment->getFileName();
+                    $filename = rand(1111, 9999).'_'.$this->sanitizeName($attachment->getFileName());
                     $type = $attachment->getMimeType();
                     $size = $attachment->getSize();
                     $data = $attachment->getData();
                 } else {
-                    $filename = rand(1111, 9999).'_'.$attachment->getClientOriginalName();
+                    $filename = rand(1111, 9999).'_'.$this->sanitizeName($attachment->getClientOriginalName());
                     $type = $attachment->getMimeType();
                     $size = $attachment->getSize();
                     $data = file_get_contents($attachment->getRealPath());
@@ -243,6 +243,40 @@ class StorageController extends Controller
         }
 
         return $thread;
+    }
+
+
+    public function sanitizeName($fileName)
+    {
+        $subject = strip_tags($fileName);
+        $array = imap_mime_header_decode($subject);
+        $title = '';
+        if (is_array($array) && count($array) > 0) {
+            foreach ($array as $text) {
+                $title .= $text->text;
+            }
+
+            return $title;
+        }
+
+        return $subject;
+    }
+
+
+    public function getNameAttribute()
+    {
+        $name = strip_tags($this->attributes['name']);
+        $array = imap_mime_header_decode($name);
+        $title = '';
+        if (is_array($array) && count($array) > 0) {
+            foreach ($array as $text) {
+                $title .= $text->text;
+            }
+
+            return wordwrap('oioioioio oioi.pdf', 70, "<br>\n");
+        }
+
+        return wordwrap('oioioioio oioi.pdf', 70, "<br>\n");
     }
 
     public function updateBody($attachment, $thread_id, $filename)

@@ -22,6 +22,7 @@ class Ticket_attachments extends Model
         }
     }
 
+
     public function getFileAttribute($value)
     {
         $drive = $this->driver;
